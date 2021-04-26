@@ -31,7 +31,7 @@ const userSchema = new Schema({
         type: String,
         minlength: 16,
         maxlength: 16,
-        required: true,
+        // required: true,
         get: obfuscate
     },
     role: {
