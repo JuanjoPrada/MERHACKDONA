@@ -5,6 +5,7 @@ const bcryptSalt = 10
 
 const mongoose = require('mongoose')
 
+const { checkRoles, isLoggedIn } = require('./../middlewares')
 
 const User = require("./../models/user.model")
 const Product = require("./../models/product.model")
@@ -34,44 +35,41 @@ router.get('/list', (req, res) => {
         .find()
         .then(allProducts => res.render('pages/admin/list', { allProducts }))
         .catch(err => console.log('Error!', err))
+})
 
-    const { checkRoles, isLoggedIn } = require('./../middlewares')
+// Endpoints
 
-    const Store = require("./../models/store.model")
+// Admin Panel
 
-    // Endpoints
+router.get('/admin-panel', isLoggedIn, checkRoles('ADMIN'), (req, res) => {
+    res.render('pages/admin/admin-page', { user: req.session.currentUser })
+})
 
-    // Admin Panel
+// Create new Store
 
-    router.get('/admin-panel', isLoggedIn, checkRoles('ADMIN'), (req, res) => {
-        res.render('pages/admin/admin-page', { user: req.session.currentUser })
-    })
+router.get('/create-store', (req, res) => {
 
-    // Create new Store
-
-    router.get('/create-store', (req, res) => {
-
-        Store
-            .find()
-            .then(allStores => res.render('pages/admin/create-store', { allStores }))
-            .catch(err => console.log('Error!', err))
-    })
+    Store
+        .find()
+        .then(allStores => res.render('pages/admin/create-store', { allStores }))
+        .catch(err => console.log('Error!', err))
+})
 
 
-    router.post('/create-store', (req, res) => {
+router.post('/create-store', (req, res) => {
 
-        const { name, type, latitude, longitude } = req.body
+    const { name, type, latitude, longitude } = req.body
 
-        const location = {
-            type: 'Point',
-            coordinates: [latitude, longitude]
-        }
+    const location = {
+        type: 'Point',
+        coordinates: [latitude, longitude]
+    }
 
 
-        Store
-            .create({ name, type, location })
-            .then(() => res.redirect('pages/admin/admin-page'))
-            .catch(err => console.log(err))
-    })
+    Store
+        .create({ name, type, location })
+        .then(() => res.redirect('pages/admin/admin-page'))
+        .catch(err => console.log(err))
+})
 
-    module.exports = router
+module.exports = router
