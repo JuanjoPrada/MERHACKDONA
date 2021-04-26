@@ -21,6 +21,9 @@ const Store = require('./../models/store.model')
 //     .catch(err => console.log(err))
 // })
 
+
+// Signup form
+
 router.get('/signup-form', (req, res) => res.render('pages/user/signup-form'))
 router.post('/signup-form', (req, res, next) => {
     const { name, surname, username, password } = req.body
