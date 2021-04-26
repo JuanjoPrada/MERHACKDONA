@@ -13,7 +13,7 @@ function initMap() {
 function getApiStores() {
 
     axios
-        .get('/stores')
+        .get('/api')
         .then(res => placeStoresInMap(res.data))
         .catch(err => console.log('ERROR EN CLIENTE OBTENIENDO LAS TIENDAS', err))
 }
