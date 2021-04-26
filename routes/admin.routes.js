@@ -3,6 +3,9 @@ const router = express.Router()
 const bcrypt = require("bcrypt")
 const bcryptSalt = 10
 
+const { checkRoles, isLoggedIn } = require('./../middlewares')
+
+
 const mongoose = require('mongoose')
 
 
@@ -12,12 +15,12 @@ const Store = require('./../models/store.model')
 
 
 // Create a new product (get)
-router.get('/create', (req, res) => res.render('pages/admin/create-product'))
+router.get('/create-product', (req, res) => res.render('pages/admin/create-product'))
 
 
 
 // Create a new product (post)
-router.post('/create', (req, res) => {
+router.post('/create-product', (req, res) => {
 
     const { name, description, type, image, price, stock } = req.body
 
@@ -34,10 +37,9 @@ router.get('/list', (req, res) => {
         .find()
         .then(allProducts => res.render('pages/admin/list', { allProducts }))
         .catch(err => console.log('Error!', err))
+})
 
-    const { checkRoles, isLoggedIn } = require('./../middlewares')
-
-    const Store = require("./../models/store.model")
+   
 
     // Endpoints
 
@@ -60,7 +62,7 @@ router.get('/list', (req, res) => {
 
     router.post('/create-store', (req, res) => {
 
-        const { name, type, latitude, longitude } = req.body
+        const { name, latitude, longitude } = req.body
 
         const location = {
             type: 'Point',
@@ -69,8 +71,8 @@ router.get('/list', (req, res) => {
 
 
         Store
-            .create({ name, type, location })
-            .then(() => res.redirect('pages/admin/admin-page'))
+            .create({ name, location })
+            .then(() => res.redirect('/admin/admin-panel'))
             .catch(err => console.log(err))
     })
 
