@@ -1,0 +1,19 @@
+<div class="container">
+    <h1>Listado de productos en stock</h1>
+    <hr>
+    <div class="row">
+        {{#each allProducts}}
+        <div class="col-8">
+            <h5>| {{name}} |</h5>
+            <br><br>
+            <p>Descripción:<br>{{description}}</p>
+            <p>Tipo: {{type}}</p>
+            <p>Precio: {{price}}€/ud</p>
+            <p>Stock: {{stock}}</p>
+            <hr>
+        </div>
+        {{/each}}
+    </div>
+    <br>
+    <a href="/" class="btn btn-dark">Volver al incio</a>
+</div>

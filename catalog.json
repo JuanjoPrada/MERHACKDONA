@@ -92,7 +92,7 @@
         "description": "Bebida de avena calcio sin azucar añadido Carrefour brik 1 l.",
         "type": "Despensa",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/554220_00_1.jpg",
-        "price": null,
+        "price": 1,
         "stock": 20
     },
     {
@@ -252,7 +252,7 @@
         "description": "Galletas avena choco Digestive Gullón 425 g.",
         "type": "Despensa",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/150529_00_1.jpg",
-        "price": null,
+        "price": 3.75,
         "stock": 20
     },
     {

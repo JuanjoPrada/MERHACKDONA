@@ -17,7 +17,8 @@ const productSchema = new Schema({
         // enum?
     },
     image: {
-        type: String
+        type: String,
+        default: "https://res.cloudinary.com/dk1u2xsjk/image/upload/v1619361599/default-image_qlyewd.png"
     },
     price: {
         type: Number,

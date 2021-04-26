@@ -1,0 +1,42 @@
+<div class="container">
+
+    <div class="row">
+        <div class="col">
+            <h1 style="font-weight: 100">Nuevo producto</h1>
+
+            <form action="/admin/create" method="POST">
+                <div class="form-group">
+                    <label for="name">Nombre</label>
+                    <input name="name" type="text" class="form-control" id="name">
+                </div>
+                <div class="form-group">
+                    <label for="description">Descripción</label>
+                    <textarea name="description" type="text" class="form-control" id="description"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="type">Tipo</label>
+                    <input name="type" type="text" class="form-control" id="type">
+                </div>
+                <div class="form-group">
+                    <label for="image">Imagen</label> {{!-- TODO: ver cómo subir imágenes sin url --}}
+                    <input name="image" type="text" class="form-control" id="image">
+                </div>
+                <div class="form-group">
+                    <label for="price">Precio</label>
+                    <input name="price" type="number" class="form-control" id="price">
+                </div>
+                <div class="form-group">
+                    <label for="stock">Stock</label>
+                    <input name="stock" type="number" class="form-control" id="stock">
+                </div>
+
+                <br>
+                <button type="submit" class="btn btn-dark">Crear producto</button>
+                <a href="/admin/list" class="btn btn-dark">Volver</a>
+                <br><br><br>
+
+            </form>
+        </div>
+
+    </div>
+</div>
