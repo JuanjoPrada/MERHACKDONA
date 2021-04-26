@@ -76,7 +76,7 @@ router.post('/login', (req, res) => {
             }
 
             if (bcrypt.compareSync(password, user.password) === false) {
-                res.render('pages/auth/login-form', {errorMessage: 'Contraseña incorrecta'})
+                res.render('pages/user/login-form', {errorMessage: 'Contraseña incorrecta'})
                 return
             }
 
@@ -88,7 +88,7 @@ router.post('/login', (req, res) => {
 
 
 router.get('/logout', (req, res) => {
-    req.session.destroy((err) => res.redirect("/login"));
+    req.session.destroy((err) => res.redirect("/"));
 })
 
 module.exports = router
