@@ -8,7 +8,6 @@ const { checkRoles, isLoggedIn } = require('./../middlewares')
 
 const mongoose = require('mongoose')
 
-const { checkRoles, isLoggedIn } = require('./../middlewares')
 
 const User = require("./../models/user.model")
 const Product = require("./../models/product.model")
