@@ -121,4 +121,20 @@ router.post('/edit-profile', isLoggedIn, checkRoles('CLIENT'), (req, res, next) 
         })
 })
 
+
+// Delete Profile
+
+router.post('/delete-profile', isLoggedIn, checkRoles("CLIENT"), (req, res) => {
+
+    const { _id } = req.session.currentUser
+    
+    User
+        .findByIdAndDelete(_id)
+        .then(() => {
+            req.session.destroy((err) => res.redirect("/"))
+        })
+        .catch(err => console.log('Error!', err))
+})
+
+
 module.exports = router

@@ -13,11 +13,13 @@
     <p><strong>Targeta</strong>: {{user.cardNumber}}</p>
     <p><strong>Ir al carrito</strong></p>
 
-    <form method="POST" action="/user/delete-profile/{{id}}">
+   
+    <a class="btn btn-sm btn-dark" href="/user/edit-profile">Editar Perfil</a>
+    <br>
+    <br>
+    <form method="POST" action="/user/delete-profile">
         <button type="submit" class="btn btn-sm btn-dark">Eliminar Cuenta de Usuario</button>
     </form>
-    <br>
-    <a class="btn btn-sm btn-dark" href="/user/edit-profile">Editar Perfil</a>
 
     <br>
     <a href="/" class="btn btn-dark">Volver a Inicio</a>
