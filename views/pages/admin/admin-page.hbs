@@ -1,6 +1,6 @@
 <div class="container">
 
-<h1 style="font-weight: 100">Hola Administrador, <strong>{{user.username}}</strong> </h1>
+    <h1 style="font-weight: 100">Hola Administrador, <strong>{{user.username}}</strong> </h1>
 
     <hr>
 
@@ -8,14 +8,18 @@
         <button type="submit" class="btn btn-sm btn-dark">Añadir nueva tienda</button>
     </form>
     <br>
-    <form method="POST" action="/admin/create-product">  
+    <form method="POST" action="/admin/create-product">
         <button type="submit" class="btn btn-sm btn-dark">Añadir nuevo producto</button>
     </form> --}}
     <a class="btn btn-sm btn-dark" href="/admin/create-store">Crear tienda</a>
     <br>
     <a class="btn btn-sm btn-dark" href="/admin/create-product">Crear producto</a>
     <br>
-    
+    <a class="btn btn-sm btn-dark" href="/admin/products-list">Lista de productos</a>
+    <br>
+    <a class="btn btn-sm btn-dark" href="/admin/stores-list">Lista de tiendas</a>
+    <br>
+
 
     <br>
     <a href="/" class="btn btn-dark">Volver a inicio</a>

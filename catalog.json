@@ -710,5 +710,21 @@
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/002805_00_1.jpg",
         "price": 1.18,
         "stock": 20
+    },
+    {
+        "name": "Bicicleta Estática Spinning Fit Pro Eco-814 Eco‐de",
+        "description": "¡Mantente hacktivo con la bicicleta estática Spinning Fit Pro Eco-814 Eco‐de!",
+        "type": "Deporte",
+        "image": "https://static.carrefour.es/hd_510x_/imagenes/products/84365/40965/479/8436540965479/imagenGrande1.jpg",
+        "price": 219.90,
+        "stock": 5
+    },
+    {
+        "name": "Lápices Color Tropicolors Pack 24",
+        "description": "¡Hácktate de tus cualidades creativas con este pack de lápices de color!",
+        "type": "Papelería",
+        "image": "https://static.carrefour.es/hd_510x_/crs/cdn_static/catalog/hd/179824_00_1.jpg",
+        "price": 3.90,
+        "stock": 20
     }
 ]

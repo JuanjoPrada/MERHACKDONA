@@ -1,0 +1,23 @@
+<div class="container">
+    <h1>Listado de tiendas</h1>
+    <hr>
+    <div class="row">
+        {{#each allStores}}
+        <div class="col-8">
+            <h5>| {{name}} |</h5>
+            <br><br>
+            <p>Dónde está:<br>
+                Latitud: {{location.coordinates.[0]}}
+                <br>
+                Longitud: {{location.coordinates.[1]}}
+            </p>
+
+            <a href="/admin/edit-store/{{id}}" class="btn btn-dark">Editar</a>
+            <hr>
+
+        </div>
+        {{/each}}
+    </div>
+    <br>
+    <a href="/admin-panel" class="btn btn-dark">Volver al incio</a>
+</div>

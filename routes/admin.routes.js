@@ -5,9 +5,7 @@ const bcryptSalt = 10
 
 const { checkRoles, isLoggedIn } = require('./../middlewares')
 
-
 const mongoose = require('mongoose')
-
 
 const User = require("./../models/user.model")
 const Product = require("./../models/product.model")
@@ -26,22 +24,118 @@ router.post('/create-product', (req, res) => {
 
     Product
         .create({ name, description, type, image, price, stock })
-        .then(() => res.redirect('/admin/list'))
+        .then(() => res.redirect('/admin/products-list'))
         .catch(err => console.log('error', err))
 })
 
 // Show the products in stock (get)
-router.get('/list', (req, res) => {
+router.get('/products-list', (req, res) => {
 
     Product
         .find()
-        .then(allProducts => res.render('pages/admin/list', { allProducts }))
+        .then(allProducts => res.render('pages/admin/products-list', { allProducts }))
         .catch(err => console.log('Error!', err))
 })
 
-   
 
-    // Endpoints
+// Edit a product (get)
+router.get("/edit-product/:productId", (req, res) => {
+    let productId = req.params.productId
+    // console.log(productId)
+
+    Product
+        .findById(productId)
+        .then(product => res.render("pages/admin/edit-product", product))
+        .catch(err => console.log("Error!", err))
+
+})
+
+
+
+// Edit a product (post)
+router.post('/edit-product/:productId', (req, res) => {
+
+    const productId = req.params.productId
+    const { name, description, type, image, price, stock } = req.body
+
+    Product
+        .findByIdAndUpdate(productId, { name, description, type, image, price, stock })
+        .then(() => res.redirect(`/admin/products-list`))
+        .catch(err => console.log('Error!', err))
+
+})
+
+
+// Delete a product
+router.post("/delete-product/:productId", (req, res) => {
+    let productId = req.params.productId
+
+    Product
+        .findByIdAndDelete(productId)
+        .then(() => res.redirect("/admin/products-list"))
+        .catch(err => console.log("Error!", err))
+
+})
+
+
+// Show all the stores
+router.get('/stores-list', (req, res) => {
+
+    Store
+        .find()
+        .then(allStores => res.render('pages/admin/stores-list', { allStores }))
+        .catch(err => console.log('Error!', err))
+})
+
+
+
+// Edit a store (get)
+router.get("/edit-store/:storeId", (req, res) => {
+    let storeId = req.params.storeId
+    // console.log(storeId)
+
+    Store
+        .findById(storeId)
+        .then(store => res.render("pages/admin/edit-store", store))
+        .catch(err => console.log("Error!", err))
+
+})
+
+
+
+// Edit a store (post)
+router.post('/edit-store/:storeId', (req, res) => {
+
+    const storeId = req.params.storeId
+    const { name, latitude, longitude } = req.body
+
+    let updateFields = { name }
+
+    updateFields.location = {
+        type: 'Point',
+        coordinates: [latitude, longitude]
+    }
+
+    Store
+        .findByIdAndUpdate(storeId, updateFields)
+        .then(() => res.redirect(`/admin/stores-list`))
+        .catch(err => console.log('Error!', err))
+
+})
+
+
+// Delete a store
+router.post("/delete-store/:storeId", (req, res) => {
+    let storeId = req.params.storeId
+
+    Store
+        .findByIdAndDelete(storeId)
+        .then(() => res.redirect("/admin/stores-list"))
+        .catch(err => console.log("Error!", err))
+
+})
+
+// Endpoints
 
 // Admin Panel
 
@@ -62,7 +156,7 @@ router.get('/create-store', (req, res) => {
 
 router.post('/create-store', (req, res) => {
 
-        const { name, latitude, longitude } = req.body
+    const { name, latitude, longitude } = req.body
 
     const location = {
         type: 'Point',
@@ -70,10 +164,10 @@ router.post('/create-store', (req, res) => {
     }
 
 
-        Store
-            .create({ name, location })
-            .then(() => res.redirect('/admin/admin-panel'))
-            .catch(err => console.log(err))
-    })
+    Store
+        .create({ name, location })
+        .then(() => res.redirect('/admin/admin-panel'))
+        .catch(err => console.log(err))
+})
 
 module.exports = router

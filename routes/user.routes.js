@@ -57,12 +57,13 @@ router.post('/login', (req, res) => {
         })
         .then(user => {
 
-            if (!user) {res.render('pages/user/login-form', {errorMessage: 'Usuario no reconocido'})
+            if (!user) {
+                res.render('pages/user/login-form', { errorMessage: 'Usuario no reconocido' })
                 return
             }
 
             if (bcrypt.compareSync(password, user.password) === false) {
-                res.render('pages/user/login-form', {errorMessage: 'Contraseña incorrecta'})
+                res.render('pages/user/login-form', { errorMessage: 'Contraseña incorrecta' })
                 return
             }
 
