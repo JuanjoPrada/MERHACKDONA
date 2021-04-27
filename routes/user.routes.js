@@ -5,6 +5,9 @@ const bcryptSalt = 10
 
 const mongoose = require('mongoose')
 
+const { isLoggedIn, checkRoles } = require('./../middlewares')
+const { isClient } = require('./../utils')
+
 
 const User = require("./../models/user.model")
 const Product = require("./../models/product.model")
@@ -70,9 +73,52 @@ router.post('/login', (req, res) => {
         .catch(err => console.log('error', err))
 })
 
+// Logout
 
 router.get('/logout', (req, res) => {
     req.session.destroy((err) => res.redirect("/"));
+})
+
+
+// User profile
+
+router.get('/profile', isLoggedIn, checkRoles('CLIENT'), (req, res) => {
+    res.render('pages/user/profile-page', {user: req.session.currentUser})
+})
+
+
+// Edit profile
+
+router.get('/edit-profile', isLoggedIn, checkRoles('CLIENT'), (req, res, next) => {
+
+    const {user_id} = req.params
+
+    User
+        .findById(user_id)
+        .then(theUser => res.render('pages/user/edit-profile-page', {theUser: req.session.currentUser })) //REQ CURRENT SESSION=????
+        .catch(err => {
+            next();
+            return err;
+        })
+})
+
+router.post('/edit-profile', isLoggedIn, checkRoles('CLIENT'), (req, res, next) => {
+
+    const { _id} = req.session.currentUser
+    const {name, surname, username, password, address, cardNumber} = req.body
+
+    console.log(_id)
+    User
+        .findByIdAndUpdate(_id, { name, surname, username, password, address, cardNumber }, {new: true})
+        .then((userUpdate) => {
+            req.session.currentUser = userUpdate
+            res.redirect('/user/profile')
+        })
+        .catch(err => {
+            console.log(err)
+            next();
+            return err;
+        })
 })
 
 module.exports = router

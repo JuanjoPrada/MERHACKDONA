@@ -1,0 +1,25 @@
+<div class="container">
+
+
+    <h1 style="font-weight: 100">{{user.name}}</h1>
+    <p>{{user.surname}}</p>
+    <p>{{user.username}}</p>
+    <p>{{user.address}}</p>
+
+    <hr>
+
+
+    <h5>Método de pago</h5>
+    <p><strong>Targeta</strong>: {{user.cardNumber}}</p>
+    <p><strong>Ir al carrito</strong></p>
+
+    <form method="POST" action="/user/delete-profile/{{id}}">
+        <button type="submit" class="btn btn-sm btn-dark">Eliminar Cuenta de Usuario</button>
+    </form>
+    <br>
+    <a class="btn btn-sm btn-dark" href="/user/edit-profile">Editar Perfil</a>
+
+    <br>
+    <a href="/" class="btn btn-dark">Volver a Inicio</a>
+
+</div>

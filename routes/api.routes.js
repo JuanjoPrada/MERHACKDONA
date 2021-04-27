@@ -5,7 +5,6 @@ const Store = require('./../models/store.model')
 
 // http://localhost:3000/api/stores
 router.get('/', (req, res) => {
-
     Store
         .find()
         .then(stores => res.json(stores))
