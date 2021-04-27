@@ -12,23 +12,6 @@ const Store = require('./../models/store.model')
 
 
 
-// router.get('/stores/create', (req, res) => res.render('pages/new-store'))
-
-//  const {name,type,latitude,longitude} = req.body
-
-//   const location = {
-//     type: 'Point',
-//     coordinates: [latitude, longitude]
-//   }
-
-
-//   Store
-//     .create({name,type,location})
-//     .then(() => res.redirect('/places/list'))
-//     .catch(err => console.log(err))
-// })
-
-
 // Signup form
 
 router.get('/signup', (req, res) => res.render('pages/user/signup-form'))

@@ -8,6 +8,7 @@ const { checkRoles, isLoggedIn } = require('./../middlewares')
 
 const mongoose = require('mongoose')
 
+const { checkRoles, isLoggedIn } = require('./../middlewares')
 
 const User = require("./../models/user.model")
 const Product = require("./../models/product.model")
@@ -43,31 +44,31 @@ router.get('/list', (req, res) => {
 
     // Endpoints
 
-    // Admin Panel
+// Admin Panel
 
-    router.get('/admin-panel', isLoggedIn, checkRoles('ADMIN'), (req, res) => {
-        res.render('pages/admin/admin-page', { user: req.session.currentUser })
-    })
+router.get('/admin-panel', isLoggedIn, checkRoles('ADMIN'), (req, res) => {
+    res.render('pages/admin/admin-page', { user: req.session.currentUser })
+})
 
-    // Create new Store
+// Create new Store
 
-    router.get('/create-store', (req, res) => {
+router.get('/create-store', (req, res) => {
 
-        Store
-            .find()
-            .then(allStores => res.render('pages/admin/create-store', { allStores }))
-            .catch(err => console.log('Error!', err))
-    })
+    Store
+        .find()
+        .then(allStores => res.render('pages/admin/create-store', { allStores }))
+        .catch(err => console.log('Error!', err))
+})
 
 
-    router.post('/create-store', (req, res) => {
+router.post('/create-store', (req, res) => {
 
         const { name, latitude, longitude } = req.body
 
-        const location = {
-            type: 'Point',
-            coordinates: [latitude, longitude]
-        }
+    const location = {
+        type: 'Point',
+        coordinates: [latitude, longitude]
+    }
 
 
         Store
@@ -76,4 +77,4 @@ router.get('/list', (req, res) => {
             .catch(err => console.log(err))
     })
 
-    module.exports = router
+module.exports = router
