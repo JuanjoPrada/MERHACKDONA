@@ -9,15 +9,15 @@
             {{#each allStores}}
             <option value="{{_id}}">{{name}}</option>
             {{/each}}
-    
+
         </select>
     </div>
     <br>
     <div class="row">
         {{#each selectedProducts}}
         <div class="col-3">
-            <img src="{{image}}" alt="{{name}}"
-            <h5>| <strong>{{name}}</strong> |</h5>
+            <hr>
+            <img src="{{image}}" alt="{{name}}" <h5>| <strong>{{name}}</strong> |</h5>
             <br>
             <p>Descripción:<br>{{description}}</p>
             <p>Tipo: {{type}}</p>
@@ -25,16 +25,14 @@
             <p>Stock: {{stock}}</p>
             <a href="/user/cart/edit/{{id}}" class="btn btn-dark">Editar</a>
             <a href="/user/cart/delete/{{id}}" class="btn btn-dark">Eliminar</a>
-            <hr>
+
 
         </div>
         {{/each}}
     </div>
+    <hr>
+    <br>
     <button type="submit" class="btn btn-dark">Confirmar compra</button>
     </form>
-    <br>
-    <br>
     <a href="/" class="btn btn-dark">Seguir comprando</a>
 </div>
-
-
