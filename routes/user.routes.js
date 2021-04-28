@@ -147,25 +147,11 @@ router.post('/delete-profile', isLoggedIn, checkRoles("CLIENT"), (req, res) => {
 })
 
 
-// Cart
-
-// router.get('/cart', isLoggedIn, checkRoles('CLIENT'), (req, res, next) => {
-
-//     Store
-//         .find()
-//         .then(allStores => res.render('pages/user/cart', {allStores}))
-//         .catch(err => {
-//             next();
-//             return err;
-//         })
-// })
-
 router.get('/cart', isLoggedIn, checkRoles('CLIENT'), (req, res, next) => {
 
     const storesPromise = Store.find()
-    // const productsPromise = Product.find()
 
-    Promise.all([storesPromise, /* productsPromise */])
+    Promise.all([storesPromise])
         .then(results => res.render('pages/user/cart', { allStores: results[0], /* selectedProducts: results[1] */ }))
         .catch(err => next(new Error(err)))
 })
