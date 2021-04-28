@@ -3,11 +3,17 @@ body {
   font-weight: 200; }
 
 .navbar {
-  margin-bottom: 50px; }
+  margin-bottom: 50px;
+}
 
 #stores-map {
   height: 60vh;
   margin: 0;
   background-color: red; }
+
+#navbar-logo {
+  -webkit-filter: drop-shadow(0px 0px 10px white);
+  filter: drop-shadow(0px 0px 10px white);
+}
 
 /*# sourceMappingURL=style.css.map */
