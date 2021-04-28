@@ -15,12 +15,12 @@ const Store = require('./../models/store.model')
 const Cart = require('../models/cart.model')
 
 
-
 // Signup form
-
 router.get('/signup', (req, res) => res.render('pages/user/signup-form'))
 router.post('/signup', (req, res, next) => {
+
     const { name, surname, username, password } = req.body
+
     User
         .findOne({ username })
         .then(user => {
@@ -28,9 +28,9 @@ router.post('/signup', (req, res, next) => {
                 res.render('pages/user/signup-form', { errorMessage: 'This user already exist' })
                 return
             }
+
             const salt = bcrypt.genSaltSync(bcryptSalt)
             const hashPass = bcrypt.hashSync(password, salt)
-            let cartObj
 
             Cart
                 .create({ products: [] })
@@ -53,8 +53,10 @@ router.post('/signup', (req, res, next) => {
         .catch(err => console.log('error', err))
 })
 
+
 // Login (get)
 router.get('/login', (req, res) => res.render('pages/user/login-form'))
+
 
 // Login (post)
 router.post('/login', (req, res) => {
@@ -83,22 +85,20 @@ router.post('/login', (req, res) => {
         .catch(err => console.log('error', err))
 })
 
-// Logout
 
+// Logout
 router.get('/logout', (req, res) => {
     req.session.destroy((err) => res.redirect("/"));
 })
 
 
 // User profile
-
 router.get('/profile', isLoggedIn, checkRoles('CLIENT'), (req, res) => {
     res.render('pages/user/profile-page', { user: req.session.currentUser })
 })
 
 
 // Edit profile
-
 router.get('/edit-profile', isLoggedIn, checkRoles('CLIENT'), (req, res, next) => {
 
     const { user_id } = req.params
@@ -133,7 +133,6 @@ router.post('/edit-profile', isLoggedIn, checkRoles('CLIENT'), (req, res, next) 
 
 
 // Delete Profile
-
 router.post('/delete-profile', isLoggedIn, checkRoles("CLIENT"), (req, res) => {
 
     const { _id } = req.session.currentUser
@@ -152,7 +151,7 @@ router.get('/cart', isLoggedIn, checkRoles('CLIENT'), (req, res, next) => {
     const storesPromise = Store.find()
 
     Promise.all([storesPromise])
-        .then(results => res.render('pages/user/cart', { allStores: results[0], /* selectedProducts: results[1] */ }))
+        .then(results => res.render('pages/user/cart', { allStores: results[0] }))
         .catch(err => next(new Error(err)))
 })
 
