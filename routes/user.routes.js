@@ -19,7 +19,7 @@ const Cart = require('../models/cart.model')
 // User profile
 
 router.get('/profile', isLoggedIn, checkRoles('CLIENT'), (req, res) => {
-    res.render('pages/user/profile-page', {user: req.session.currentUser})
+    res.render('pages/user/profile-page', { user: req.session.currentUser })
 })
 
 
@@ -27,7 +27,7 @@ router.get('/profile', isLoggedIn, checkRoles('CLIENT'), (req, res) => {
 
 router.get('/edit-profile', isLoggedIn, checkRoles('CLIENT'), (req, res, next) => {
 
-    const {user_id} = req.params
+    const { user_id } = req.params
 
     User
         .findById(user_id)
@@ -37,12 +37,12 @@ router.get('/edit-profile', isLoggedIn, checkRoles('CLIENT'), (req, res, next) =
 
 router.post('/edit-profile', isLoggedIn, checkRoles('CLIENT'), (req, res, next) => {
 
-    const { _id} = req.session.currentUser
-    const {name, surname, username, password, address, cardNumber} = req.body
+    const { _id } = req.session.currentUser
+    const { name, surname, username, password, address, cardNumber } = req.body
 
     console.log(_id)
     User
-        .findByIdAndUpdate(_id, { name, surname, username, password, address, cardNumber }, {new: true})
+        .findByIdAndUpdate(_id, { name, surname, username, password, address, cardNumber }, { new: true })
         .then((userUpdate) => {
             req.session.currentUser = userUpdate
             res.redirect('/user/profile')
@@ -56,7 +56,7 @@ router.post('/edit-profile', isLoggedIn, checkRoles('CLIENT'), (req, res, next) 
 router.post('/delete-profile', isLoggedIn, checkRoles("CLIENT"), (req, res) => {
 
     const { _id } = req.session.currentUser
-    
+
     User
         .findByIdAndDelete(_id)
         .then(() => {
@@ -79,25 +79,57 @@ router.post('/delete-profile', isLoggedIn, checkRoles("CLIENT"), (req, res) => {
 //         })
 // })
 
-router.get('/cart', isLoggedIn, checkRoles('CLIENT'),(req, res, next) => {
+router.get('/cart', isLoggedIn, checkRoles('CLIENT'), (req, res, next) => {
 
-  const storesPromise = Store.find()
-  const productsPromise = Product.find()
+    const storesPromise = Store.find()
+    // const productsPromise = Product.find()
 
-  Promise.all([storesPromise, productsPromise])
-   .then(results => res.render('pages/user/cart',{allStores: results[0], selectedProducts: results[1]}))
-   .catch(err => next(new Error(err)))
+    Promise.all([storesPromise, /* productsPromise */])
+        .then(results => res.render('pages/user/cart', { allStores: results[0], /* selectedProducts: results[1] */ }))
+        .catch(err => next(new Error(err)))
 })
 
 
-router.post('/cart', isLoggedIn, checkRoles('CLIENT'), (req, res, next) => {
-  const { name, description, type, image, price, stock } = req.body
-  Product.findByIdAndUpdate(req.query.id, { name, description, type, image, price, stock })
-    .then(() => res.redirect(`/#######/${req.query.id}`))
-   .catch(err => next(new Error(err)))
+router.post('/cart/add-product/:productId', isLoggedIn, checkRoles('CLIENT'), (req, res, next) => {
+
+    const { amount } = req.body
+    const productId = req.params.productId
+    const { _id } = req.session.currentUser
+
+    User
+        .findById(_id)
+        .then(user => {
+
+            Cart
+                .findById(user.cart)
+                .then(cart => {
+
+                    let product
+
+                    cart.products.forEach(elem => {
+                        if (elem.product._id.toString() === productId) {
+                            product = elem
+
+                        }
+                    })
+
+                    if (product) {
+                        product.amount = amount
+
+                    } else {
+
+                        let newProduct = {
+                            product: new mongoose.mongo.ObjectId(productId),
+                            amount: amount
+                        }
+
+                        cart.products.push(newProduct)
+                    }
+
+                    cart.save()
+                })
+        })
+
 })
-
-
-
 
 module.exports = router

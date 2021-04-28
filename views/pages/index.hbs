@@ -1,12 +1,15 @@
 <div class="container">
     <h1>Bienvenido a {{siteTitle}}</h1>
-</div>
-
-<div>
-    <form action="/" method="GET">
-        <input id="filter" name="filter" type="text">
-        <button class="btn">Buscar</button>
-    </form>
+    <br>
+    <hr>
+    <br>
+    <div>
+        <form action="/" method="GET">
+            <input id="filter" name="filter" type="text">
+            <button class="btn btn-md btn-dark find">Buscar</button>
+        </form>
+    </div>
+    <br>
 </div>
 
 <div class="container">
@@ -14,23 +17,42 @@
         {{#each products}}
         <div class="col-4">
             <hr>
-            <img src="{{image}}" alt="{{name}}">
+            <a href="/product/details/{{id}}">
+                <img src="{{image}}" alt="{{name}}">
+            </a>
             <br>
-            <h4>{{name}}</h4>
+            <a href="/product/details/{{id}}">
+                <h4 id="detailsLink">{{name}}</h4>
+            </a>
             <br>
             <h5>Precio: {{price}} €/ud</h5>
             <br>
-            {{!-- <a href="/movie/{{this.id}}">See more!</a> --}}
+            <form action="/user/cart/add-product/{{id}}" method="POST">
+                <input type="number" name="amount">
+                <button class="btn btn-md btn-dark btn-sm">Añadir al carrito</button>
+            </form>
         </div>
+        {{else}}
+        No se han encontrado productos con las características indicadas.
         {{/each}}
 
     </div>
 </div>
-
+<br>
+<br>
+<hr>
+<br>
+<figure class="centered">
+    <img src="./../../img/logo-3.png" alt="logo-merhackona">
+</figure>
+<br>
+<hr>
 <div>
     <figure id="stores-map"></figure>
 </div>
-
+<br>
+<br>
+<br>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="/js/mapstyles.js"></script>
 <script src="/js/map-stores.js"></script>

@@ -16,4 +16,50 @@ body {
   filter: drop-shadow(0px 0px 10px white);
 }
 
+#filter {
+  width: 80%;
+  height: 38px;
+}
+
+.find {
+  padding: 7px 80px;
+}
+
+.centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sameSize {
+  width: auto;
+  height: 500px;
+}
+
+.productCard {
+  display: flex;
+  margin: 2em 10em;
+}
+
+.productData {
+  margin: 0 100px;
+}
+
+.productData h3 {
+  font-size: 40px;
+  margin-bottom: 1em;
+}
+
+.productData h4 {
+  margin-bottom: 0.8em;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+#detailsLink {
+  color: darkblue;
+}
+
 /*# sourceMappingURL=style.css.map */

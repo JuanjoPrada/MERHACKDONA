@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 const Product = require("./../models/product.model")
 const catalog = require("./../catalog")
 
-const INITIAL_INSERT = true // OJO
+const INITIAL_INSERT = false // OJO
 
 const MONGODB_URI = process.env.MONGODB_URI || `mongodb://localhost/express-boilerplate`
 
