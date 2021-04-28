@@ -15,12 +15,24 @@ const Store = require('./../models/store.model')
 const Cart = require('../models/cart.model')
 
 router.get('/', isLoggedIn, checkRoles('CLIENT'), (req, res, next) => {
-    const storesPromise = Store.find()
+    const storesPromise = Store
+        .find()
+    const productsPromise = User
+        .findById(req.session.currentUser)
+        .then(user => {
+            return Cart
+                .findById(user.cart)
+                .populate("products.product")
+        })
+
     Promise
-        .all([storesPromise])
-        .then(results => res.render('pages/user/cart', {
-            allStores: results[0]
-        }))
+        .all([storesPromise, productsPromise])
+        .then(results => {
+            res.render('pages/cart/cart', {
+                allStores: results[0],
+                selectedProducts: results[1].products
+            })
+        })
         .catch(err => next(new Error(err)))
 })
 

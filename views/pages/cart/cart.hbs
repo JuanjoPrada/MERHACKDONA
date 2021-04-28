@@ -17,23 +17,21 @@
         {{#each selectedProducts}}
         <div class="col-3">
             <hr>
-            <img src="{{image}}" alt="{{name}}" <h5>| <strong>{{name}}</strong> |</h5>
+            <img src="{{product.image}}" alt="{{product.name}}" <h5>| <strong>{{product.name}}</strong> |</h5>
             <br>
-            <p>Descripción:<br>{{description}}</p>
-            <p>Tipo: {{type}}</p>
-            <p>Precio: {{price}}€/ud</p>
-            <p>Unidades: €/ud</p>
-            <a href="/user/cart/edit/{{id}}" class="btn btn-dark">Editar</a>
-            <a href="/user/cart/delete/{{id}}" class="btn btn-dark">Eliminar</a>
+            <p>Descripción:<br>{{product.description}}</p>
+            <p>Tipo: {{product.type}}</p>
+            <p>Precio: {{product.price}}€/ud</p>
+            <p>Unidades: {{amount}}</p>
+            <a href="/cart/delete/{{product.id}}" class="btn btn-dark">Eliminar</a>
 
-            </div>
-            {{/each}}
         </div>
         {{/each}}
     </div>
-    <hr>
-    <br>
-    <button type="submit" class="btn btn-dark">Confirmar compra</button>
-    </form>
-    <a href="/" class="btn btn-dark">Seguir comprando</a>
+</div>
+<hr>
+<br>
+<button type="submit" class="btn btn-dark">Confirmar compra</button>
+</form>
+<a href="/" class="btn btn-dark">Seguir comprando</a>
 </div>
