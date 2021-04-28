@@ -172,34 +172,42 @@ router.get('/cart', isLoggedIn, checkRoles('CLIENT'), (req, res, next) => {
 
 
 router.post('/cart/add-product/:productId', isLoggedIn, checkRoles('CLIENT'), (req, res, next) => {
+
     const { amount } = req.body
     const productId = req.params.productId
     const { _id } = req.session.currentUser
 
     User
         .findById(_id)
-        .populate("cart")
         .then(user => {
-            let cart = user.cart
-            let found = false
 
-            cart.products.forEach(elem => {
-                if (elem.product._id === productId) {
-                    elem.amount = amount
-                    found = true
-                }
-            })
-            if (!found) {
-                cart.products.push({
-                    product: new mongoose.mongo.ObjectId(productId),
-                    amount: amount
-                })
-            }
             Cart
-                .findByIdAndUpdate(cart._id, {
-                    $set: {
-                        products: cart.products
+                .findById(user.cart)
+                .then(cart => {
+
+                    let product
+
+                    cart.products.forEach(elem => {
+                        if (elem.product._id.toString() === productId) {
+                            product = elem
+
+                        }
+                    })
+
+                    if (product) {
+                        product.amount = amount
+
+                    } else {
+
+                        let newProduct = {
+                            product: new mongoose.mongo.ObjectId(productId),
+                            amount: amount
+                        }
+
+                        cart.products.push(newProduct)
                     }
+
+                    cart.save()
                 })
         })
 
