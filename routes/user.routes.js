@@ -195,6 +195,8 @@ router.post('/cart/add-product/:productId', isLoggedIn, checkRoles('CLIENT'), (r
 
                     cart.save()
                 })
+
+            res.json("ok")
         })
 
 })

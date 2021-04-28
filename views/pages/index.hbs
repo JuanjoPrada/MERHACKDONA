@@ -27,9 +27,9 @@
             <br>
             <h5>Precio: {{price}} €/ud</h5>
             <br>
-            <form action="/user/cart/add-product/{{id}}" method="POST">
+            <form class="addProduct" action="/user/cart/add-product/{{id}}" method="POST">
                 <input type="number" name="amount">
-                <button class="btn btn-md btn-dark btn-sm">Añadir al carrito</button>
+                <button class="btn btn-md btn-dark btn-sm addBtn">Añadir al carrito</button>
             </form>
         </div>
         {{else}}
@@ -53,6 +53,7 @@
 <br>
 <br>
 <br>
+<script src="/js/functions.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="/js/mapstyles.js"></script>
 <script src="/js/map-stores.js"></script>
