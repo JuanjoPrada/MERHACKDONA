@@ -3,17 +3,27 @@
 </div>
 
 <div>
-    <form action="">
-        <input type="text">
+    <form action="/" method="GET">
+        <input id="filter" name="filter" type="text">
         <button class="btn">Buscar</button>
     </form>
 </div>
 
 <div class="container">
     <div class="row">
-        <div class="col-4"></div>
-        <div class="col-4"></div>
-        <div class="col-4"></div>
+        {{#each products}}
+        <div class="col-4">
+            <hr>
+            <img src="{{image}}" alt="{{name}}">
+            <br>
+            <h4>{{name}}</h4>
+            <br>
+            <h5>Precio: {{price}} €/ud</h5>
+            <br>
+            {{!-- <a href="/movie/{{this.id}}">See more!</a> --}}
+        </div>
+        {{/each}}
+
     </div>
 </div>
 

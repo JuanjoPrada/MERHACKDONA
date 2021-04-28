@@ -12,6 +12,7 @@ const { isClient } = require('./../utils')
 const User = require("./../models/user.model")
 const Product = require("./../models/product.model")
 const Store = require('./../models/store.model')
+const Cart = require('../models/cart.model')
 
 
 
@@ -135,6 +136,40 @@ router.post('/delete-profile', isLoggedIn, checkRoles("CLIENT"), (req, res) => {
         })
         .catch(err => console.log('Error!', err))
 })
+
+
+// Cart
+
+// router.get('/cart', isLoggedIn, checkRoles('CLIENT'), (req, res, next) => {
+
+//     Store
+//         .find()
+//         .then(allStores => res.render('pages/user/cart', {allStores}))
+//         .catch(err => {
+//             next();
+//             return err;
+//         })
+// })
+
+router.get('/cart', isLoggedIn, checkRoles('CLIENT'),(req, res, next) => {
+
+  const storesPromise = Store.find()
+  const productsPromise = Product.find()
+
+  Promise.all([storesPromise, productsPromise])
+   .then(results => res.render('pages/user/cart',{allStores: results[0], selectedProducts: results[1]}))
+   .catch(err => next(new Error(err)))
+})
+
+
+router.post('/cart', isLoggedIn, checkRoles('CLIENT'), (req, res, next) => {
+  const { name, description, type, image, price, stock } = req.body
+  Product.findByIdAndUpdate(req.query.id, { name, description, type, image, price, stock })
+    .then(() => res.redirect(`/#######/${req.query.id}`))
+   .catch(err => next(new Error(err)))
+})
+
+
 
 
 module.exports = router
