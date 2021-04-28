@@ -17,7 +17,7 @@ const Cart = require('../models/cart.model')
 
 // Signup form
 
-router.get('/signup', (req, res) => res.render('pages/user/signup-form'))
+router.get('/signup', (req, res) => res.render('pages/auth/signup-form'))
 
 router.post('/signup', (req, res, next) => {
 
@@ -27,11 +27,13 @@ router.post('/signup', (req, res, next) => {
         .findOne({ username })
         .then(user => {
             if (user) {
-                res.render('pages/user/signup-form', { errorMessage: 'This user already exist' })
+                res.render('pages/auth/signup-form', { errorMessage: 'This user already exist' })
                 return
             }
+
             const salt = bcrypt.genSaltSync(bcryptSalt)
             const hashPass = bcrypt.hashSync(password, salt)
+
             User
                 .create({ username, name, surname, password: hashPass })
                 .then(() => res.redirect('/'))
@@ -49,7 +51,7 @@ router.post('/signup', (req, res, next) => {
 
 // Login (get)
 
-router.get('/login', (req, res) => res.render('pages/user/login-form'))
+router.get('/login', (req, res) => res.render('pages/auth/login-form'))
 
 
 // Login (post)
@@ -65,12 +67,12 @@ router.post('/login', (req, res) => {
         .then(user => {
 
             if (!user) {
-                res.render('pages/user/login-form', { errorMessage: 'Usuario no reconocido' })
+                res.render('pages/auth/login-form', { errorMessage: 'Usuario no reconocido' })
                 return
             }
 
             if (bcrypt.compareSync(password, user.password) === false) {
-                res.render('pages/user/login-form', { errorMessage: 'Contraseña incorrecta' })
+                res.render('pages/auth/login-form', { errorMessage: 'Contraseña incorrecta' })
                 return
             }
 

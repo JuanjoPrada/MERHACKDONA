@@ -13,11 +13,13 @@ const Store = require('./../models/store.model')
 
 
 // Create a new product (get)
+
 router.get('/create-product', (req, res) => res.render('pages/admin/create-product'))
 
 
 
 // Create a new product (post)
+
 router.post('/create-product', (req, res) => {
 
     const { name, description, type, image, price, stock } = req.body
@@ -25,20 +27,23 @@ router.post('/create-product', (req, res) => {
     Product
         .create({ name, description, type, image, price, stock })
         .then(() => res.redirect('/admin/products-list'))
-        .catch(err => console.log('error', err))
+        .catch(err => next(new Error(err)))
 })
 
+
 // Show the products in stock (get)
+
 router.get('/products-list', (req, res) => {
 
     Product
         .find()
         .then(allProducts => res.render('pages/admin/products-list', { allProducts }))
-        .catch(err => console.log('Error!', err))
+        .catch(err => next(new Error(err)))
 })
 
 
 // Edit a product (get)
+
 router.get("/edit-product/:productId", (req, res) => {
     let productId = req.params.productId
     // console.log(productId)
@@ -46,13 +51,14 @@ router.get("/edit-product/:productId", (req, res) => {
     Product
         .findById(productId)
         .then(product => res.render("pages/admin/edit-product", product))
-        .catch(err => console.log("Error!", err))
+        .catch(err => next(new Error(err)))
 
 })
 
 
 
 // Edit a product (post)
+
 router.post('/edit-product/:productId', (req, res) => {
 
     const productId = req.params.productId
@@ -61,43 +67,45 @@ router.post('/edit-product/:productId', (req, res) => {
     Product
         .findByIdAndUpdate(productId, { name, description, type, image, price, stock })
         .then(() => res.redirect(`/admin/products-list`))
-        .catch(err => console.log('Error!', err))
+        .catch(err => next(new Error(err)))
 
 })
 
 
 // Delete a product
 router.post("/delete-product/:productId", (req, res) => {
+
     let productId = req.params.productId
 
     Product
         .findByIdAndDelete(productId)
         .then(() => res.redirect("/admin/products-list"))
-        .catch(err => console.log("Error!", err))
+        .catch(err => next(new Error(err)))
 
 })
 
 
 // Show all the stores
+
 router.get('/stores-list', (req, res) => {
 
     Store
         .find()
         .then(allStores => res.render('pages/admin/stores-list', { allStores }))
-        .catch(err => console.log('Error!', err))
+        .catch(err => next(new Error(err)))
 })
 
 
 
 // Edit a store (get)
 router.get("/edit-store/:storeId", (req, res) => {
+
     let storeId = req.params.storeId
-    // console.log(storeId)
 
     Store
         .findById(storeId)
         .then(store => res.render("pages/admin/edit-store", store))
-        .catch(err => console.log("Error!", err))
+        .catch(err => next(new Error(err)))
 
 })
 
@@ -119,23 +127,23 @@ router.post('/edit-store/:storeId', (req, res) => {
     Store
         .findByIdAndUpdate(storeId, updateFields)
         .then(() => res.redirect(`/admin/stores-list`))
-        .catch(err => console.log('Error!', err))
+        .catch(err => next(new Error(err)))
 
 })
 
 
 // Delete a store
+
 router.post("/delete-store/:storeId", (req, res) => {
     let storeId = req.params.storeId
 
     Store
         .findByIdAndDelete(storeId)
         .then(() => res.redirect("/admin/stores-list"))
-        .catch(err => console.log("Error!", err))
+        .catch(err => next(new Error(err)))
 
 })
 
-// Endpoints
 
 // Admin Panel
 
@@ -150,7 +158,7 @@ router.get('/create-store', (req, res) => {
     Store
         .find()
         .then(allStores => res.render('pages/admin/create-store', { allStores }))
-        .catch(err => console.log('Error!', err))
+        .catch(err => next(new Error(err)))
 })
 
 
@@ -167,7 +175,7 @@ router.post('/create-store', (req, res) => {
     Store
         .create({ name, location })
         .then(() => res.redirect('/admin/admin-panel'))
-        .catch(err => console.log(err))
+        .catch(err => next(new Error(err)))
 })
 
 module.exports = router
