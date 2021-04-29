@@ -1,30 +1,42 @@
-# week5_day4
+## README MERHACKONA
 
-> Express | File upload
->
-> Express | CDN file upload
-
-
-
-## Main points: file upload (local)
-
-- Los formularios con controles de tipo `file` requeren el atributo `enctype="multipart/form-data"` para procesar el envío de archivos.
-
-- La dependencia `multer` crea en el objeto `request` la propiedad `file` donde guarda los detalles de la subida tras actuar como middleware.
-
-- Las propiedades del objeto req.file son:
-
-  * fieldname
-  * originalname
-  * encoding
-  * mimetype
-  * size
-  * destination
-  * filename
-  * path
-  * buffer
-
-
-## Main points: file upload (CDN)
-
-- Las dependencias `cloudinary`, `multer-storage-cloudinary` y `multer` pueden combinarse para conectar Express al CDN Cloudinary.
+|**Method**|**Endpoints for /admin** | **Description**                                    |
+| -------- | ---------------------------- | -------------------------------------------------- |
+| Get      | /create-product              | Admin can create a new product                     |
+| Post     | /create-product              | Save new product on DB                             |
+| Get      | /admin-products-list         | Show products in stock                             |
+| Get      | /edit-product/:productId     | Edit a product                                     |
+| Post     | /edit-product/:productId     | Save edition on DB                                 |
+| Post     | /delete-product/:productId   | Delete a product from DB                           |
+| Get      | /create-store                | Admin can create a new store                       |
+| Post     | /create-store                | Save new store on DB                               |
+| Get      | /stores-list                 | Show stores                                        |
+| Get      | /edit-store/:storeId         | Edit a store                                       |
+| Post     | /edit-store/:storeId         | Save edition on DB                                 |
+| Post     | /delete-store/:storeId       | Delete a store from DB                             |
+| Get      | /admin-panel                 | Where admin can do everything before               |
+|**Method**|**Endpoints for /user** | **Description**                                    |
+| Get      | /profile                     | User profile page                                  |
+| Get      | /edit-profile                | Edit user profile (individually)                   |
+| Post     | /edit-profile                | Save edition on DB                                 |
+| Post     | /delete-profile              | User can delete its own user profile               |
+|**Method**|**Endpoints for /auth** | **Description**                                    |
+| Get      | /signup                      | Create a new user                                  |
+| Post     | /signup                      | Save the new user on DB                            |
+| Get      | /login                       | Login for user or admin                            |
+| Post     | /login                       | Create the session on DB (cookie)                  |
+| Get      | /logout                      | Destroy the session on DB (cookie)                 |
+|**Method**|**Endpoints for /api** | **Description**                                    |
+| Get      | /                            | Stores listed on map                               |
+|**Method**|**Endpoints for /product** | **Description**                                    |
+| Get      | /details/:productId          | Show details of one product                        |
+|**Method**|**Endpoints for /cart** | **Description**                                    |
+| Get      | /                            | Show stores and populate the products for the cart |
+| Post     | /add-product/:productId      | Add a product to cart                              |
+| Post     | /delete/:productId           | Delete a product of the cart                       |
+| Post     | /purchase                    | Process the purchase                               |
+| Get      | /purchase/success            | Tells the user the purchase is complete                               |
+|**Method**|**Endpoints for base.routes** | **Description**                                    |
+| Get      | /                            | Filter for the search input on index               |
+|**Method**|**Endpoints for /contact** | **Description**                                    |
+| Get      | /contact-page                | Shows contact information of Merhackona                       |

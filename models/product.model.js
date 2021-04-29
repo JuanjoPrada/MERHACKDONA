@@ -27,8 +27,7 @@ const productSchema = new Schema({
     },
     stock: {
         type: Number,
-        required: [true, 'Debes introducir el stock disponible del producto'],
-        min: 0
+        required: true
     }
 }, {
     timestamps: true

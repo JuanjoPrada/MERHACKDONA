@@ -4,7 +4,8 @@
         "surname": "admin",
         "username": "admin",
         "password": "$2b$10$cXkiJ9rP5FZFLuUVXnG0Q.zqzthLES7105c0l4S1pIk.PbeBh2oFa",
-        "role": "ADMIN"
+        "role": "ADMIN",
+        "cardNumber": "0123456789012345"
     },
     {
         "name": "user",
@@ -12,6 +13,7 @@
         "username": "user",
         "password": "$2b$10$DoGi3STAZkhSy5yjQLA/o.zKDEW19awO.s4X/ac3yCsOYSdo0iEpa",
         "role": "CLIENT",
-        "cart": "608983137451d5956b41ad7a"
+        "cart": "608983137451d5956b41ad7a",
+        "cardNumber": "9876543210987654"
     }
 ]

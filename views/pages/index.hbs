@@ -27,13 +27,21 @@
             <br>
             <h5>Precio: {{price}} €/ud</h5>
             <br>
+
+            {{#when stock "lte" 0}}
+            <i>Sin stock</i>
+            {{/when}}
+
+            {{#when stock "gt" 0}}
             <form class="addProduct" action="/cart/add-product/{{id}}" method="POST">
                 <input type="number" name="amount">
                 <button class="btn btn-md btn-dark btn-sm addBtn">Añadir al carrito</button>
             </form>
+            {{/when}}
+
         </div>
         {{else}}
-        No se han encontrado productos con las características indicadas.
+        <p>No se han encontrado productos con las características indicadas.</p>
         {{/each}}
 
     </div>

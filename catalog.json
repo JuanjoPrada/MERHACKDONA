@@ -5,7 +5,7 @@
         "type": "Bebidas",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/197236_00_1.jpg",
         "price": 1.72,
-        "stock": 20
+        "stock": 100
     },
     {
         "name": "Nestea té negro con limón sin azúcar desteinado botella 1,5 l.",
@@ -13,7 +13,7 @@
         "type": "Bebidas",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/153087_00_1.jpg",
         "price": 1.74,
-        "stock": 20
+        "stock": 100
     },
     {
         "name": "Refresco de té Nestea sin azúcar sabor limón botella 1,5 l.",
@@ -21,7 +21,7 @@
         "type": "Bebidas",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/153095_00_1.jpg",
         "price": 1.73,
-        "stock": 20
+        "stock": 100
     },
     {
         "name": "Zumo multifrutas Carrefour exprimido brik 1 l.",
@@ -29,7 +29,7 @@
         "type": "Bebidas",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/014107_00_1.jpg",
         "price": 1.64,
-        "stock": 20
+        "stock": 100
     },
     {
         "name": "Aceite de oliva virgen extra Carrefour 1 l.",
@@ -37,7 +37,7 @@
         "type": "Despensa",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/471213_00_1.jpg",
         "price": 3.45,
-        "stock": 20
+        "stock": 100
     },
     {
         "name": "Aceitunas manzanilla deshuesada Aperitivo 400 g",
@@ -45,7 +45,7 @@
         "type": "Despensa",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/340468_00_1.jpg",
         "price": 3,
-        "stock": 20
+        "stock": 100
     },
     {
         "name": "Ajo en polvo Carmencita 60 g.",
@@ -53,7 +53,7 @@
         "type": "Despensa",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/002151_00_1.jpg",
         "price": 1.91,
-        "stock": 20
+        "stock": 100
     },
     {
         "name": "Alga Sushi Nory Blue Dragon sin gluten y sin lactosa 11 g.",
@@ -61,7 +61,7 @@
         "type": "Despensa",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/893117_00_1.jpg",
         "price": 2.1,
-        "stock": 20
+        "stock": 100
     },
     {
         "name": "Alubia cocida categoría extra Luengo 400 g.",
@@ -69,7 +69,7 @@
         "type": "Despensa",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/032625_00_1.jpg",
         "price": 0.94,
-        "stock": 20
+        "stock": 100
     },
     {
         "name": "Aperitivos de hummus con albahaca y perejil Grefusa Snatt's sin gluten 110 g.",
@@ -77,7 +77,7 @@
         "type": "Despensa",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/227526_00_1.jpg",
         "price": 1.39,
-        "stock": 20
+        "stock": 100
     },
     {
         "name": "Arroz categoría extra La Fallera 1 kg.",
@@ -85,7 +85,7 @@
         "type": "Despensa",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/013185_00_1.jpg",
         "price": 1.35,
-        "stock": 20
+        "stock": 100
     },
     {
         "name": "Bebida de avena calcio sin azucar añadido Carrefour brik 1 l.",
@@ -93,7 +93,7 @@
         "type": "Despensa",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/554220_00_1.jpg",
         "price": 1,
-        "stock": 20
+        "stock": 100
     },
     {
         "name": "Bebida de avena Carrefour con calcio brik 1 l.",
@@ -101,7 +101,7 @@
         "type": "Despensa",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/970685_00_1.jpg",
         "price": 1.08,
-        "stock": 20
+        "stock": 100
     },
     {
         "name": "Bombones de chocolate negro rellenos de licor de cereza Mon Chéri 16 ud.",
@@ -109,7 +109,7 @@
         "type": "Despensa",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/001987_00_1.jpg",
         "price": 4.29,
-        "stock": 20
+        "stock": 100
     },
     {
         "name": "Cacao soluble instantáneo extra chocolate Nestlé Nesquik sin gluten y sin lactosa 390 g.",
@@ -117,7 +117,7 @@
         "type": "Despensa",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/425450_00_1.jpg",
         "price": 2.05,
-        "stock": 20
+        "stock": 100
     },
     {
         "name": "Caldo casero de verduras Gallina Blanca 1 l.",
@@ -125,7 +125,7 @@
         "type": "Despensa",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/089606_00_1.jpg",
         "price": 1.8,
-        "stock": 20
+        "stock": 100
     },
     {
         "name": "Caldo casero de verduras Gallina Blanca pack de 2 briks de 1 l.",
@@ -133,7 +133,7 @@
         "type": "Despensa",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/361285_00_1.jpg",
         "price": 3.26,
-        "stock": 20
+        "stock": 100
     },
     {
         "name": "Cebolla frita crujiente 500 g",
@@ -141,7 +141,7 @@
         "type": "Despensa",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/642635_00_1.jpg",
         "price": 4.95,
-        "stock": 20
+        "stock": 100
     },
     {
         "name": "Cereales ecológicos Corn Flakes Carrefour Bio 500 g.",
@@ -149,7 +149,7 @@
         "type": "Despensa",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/809740_00_1.jpg",
         "price": 2.29,
-        "stock": 20
+        "stock": 100
     },
     {
         "name": "Chocolate negro 70% Lindt Excellence pack de 2 tabletas de 100 g.",
@@ -157,7 +157,7 @@
         "type": "Despensa",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/348874_00_1.jpg",
         "price": 4.75,
-        "stock": 20
+        "stock": 100
     },
     {
         "name": "Chocolate negro 70% sin azúcar añadido Valor sin gluten 180 g.",
@@ -165,7 +165,7 @@
         "type": "Despensa",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/886686_00_1.jpg",
         "price": 2.7,
-        "stock": 20
+        "stock": 100
     },
     {
         "name": "Crema balsámica de frambuesa Carrefour 250 ml.",
@@ -173,7 +173,7 @@
         "type": "Despensa",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/727901_00_1.jpg",
         "price": 3.45,
-        "stock": 20
+        "stock": 100
     },
     {
         "name": "Crema de legumbres ecológica Pedro Luis sin gluten 500 ml.",
@@ -181,7 +181,7 @@
         "type": "Despensa",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/223769_00_1.jpg",
         "price": 3.45,
-        "stock": 20
+        "stock": 100
     },
     {
         "name": "Escalopes de seitán rebozado en filetes ecológico Gerblé Bio 180 g.",
@@ -189,7 +189,7 @@
         "type": "Despensa",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/952989_00_1.jpg",
         "price": 3.99,
-        "stock": 20
+        "stock": 100
     },
     {
         "name": "Espaguetis Carrefour 1 kg.",
@@ -197,7 +197,7 @@
         "type": "Despensa",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/226608_00_1.jpg",
         "price": 0.73,
-        "stock": 20
+        "stock": 100
     },
     {
         "name": "Espirales vegetales Carrefour 500 g.",
@@ -205,7 +205,7 @@
         "type": "Despensa",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/228697_00_1.jpg",
         "price": 0.59,
-        "stock": 20
+        "stock": 100
     },
     {
         "name": "Estrellas Gallo 500 g.",
@@ -213,7 +213,7 @@
         "type": "Despensa",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/036703_00_1.jpg",
         "price": 0.95,
-        "stock": 20
+        "stock": 100
     },
     {
         "name": "Fideo nº0 Gallo 750 g.",
@@ -221,7 +221,7 @@
         "type": "Despensa",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/342696_00_1.jpg",
         "price": 1.35,
-        "stock": 20
+        "stock": 100
     },
     {
         "name": "Fideos de arroz integral Vermicelli Tiger Khan sin gluten 180 g.",
@@ -229,7 +229,7 @@
         "type": "Despensa",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/109606_00_1.jpg",
         "price": 2.25,
-        "stock": 20
+        "stock": 100
     },
     {
         "name": "Fideos orientales Yakisoba noodles Classic Maggi Fusian 120 g.",
@@ -237,7 +237,7 @@
         "type": "Despensa",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/262025_00_1.jpg",
         "price": 1.52,
-        "stock": 20
+        "stock": 100
     },
     {
         "name": "Fusilli lunghi Garofalo 500 g.",
@@ -245,7 +245,7 @@
         "type": "Despensa",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/937007_00_1.jpg",
         "price": 2.65,
-        "stock": 20
+        "stock": 100
     },
     {
         "name": "Galletas avena choco Digestive Gullón 425 g.",
@@ -253,7 +253,7 @@
         "type": "Despensa",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/150529_00_1.jpg",
         "price": 3.75,
-        "stock": 20
+        "stock": 100
     },
     {
         "name": "Galletas con chocolate Diet Fibra Gullón 450 g.",
@@ -261,7 +261,7 @@
         "type": "Despensa",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/001668_00_1.jpg",
         "price": 2.39,
-        "stock": 20
+        "stock": 100
     },
     {
         "name": "Galletas con pepitas de chocolate Cuétara 450 g.",
@@ -269,7 +269,7 @@
         "type": "Despensa",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/246871_00_1.jpg",
         "price": 2.9,
-        "stock": 20
+        "stock": 100
     },
     {
         "name": "Galletas de cereales con cacao y vitaminas Dinosaurus Artiach 350 g.",
@@ -277,7 +277,7 @@
         "type": "Despensa",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/928468_00_1.jpg",
         "price": 1.99,
-        "stock": 20
+        "stock": 100
     },
     {
         "name": "Galletas ronditas de chocolate sin azúcares Zero Gullón 186 g.",
@@ -285,7 +285,7 @@
         "type": "Despensa",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/744492_00_1.jpg",
         "price": 1.99,
-        "stock": 20
+        "stock": 100
     },
     {
         "name": "Gazpacho con aceite de oliva virgen extra Carrefour sin gluten pack de 3 unidades de 330 ml.",
@@ -293,7 +293,7 @@
         "type": "Despensa",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/638095_00_1.jpg",
         "price": 1.75,
-        "stock": 20
+        "stock": 100
     },
     {
         "name": "Hamburguesa de tofu y espinacas ecológica Gerblé Bio pack de 2 unidades de 80 g.",
@@ -301,7 +301,7 @@
         "type": "Despensa",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/822080_00_1.jpg",
         "price": 3.5,
-        "stock": 20
+        "stock": 100
     },
     {
         "name": "Hamburguesa de tofu y zanahoria ecológica Gerblé Bio pack de 2 unidades de 80 g.",
@@ -309,7 +309,7 @@
         "type": "Despensa",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/822079_00_1.jpg",
         "price": 3.5,
-        "stock": 20
+        "stock": 100
     },
     {
         "name": "Helado vegano de chocolate con trozos de brownie Non Dairy Ben & Jerry's 395 g.",
@@ -317,7 +317,7 @@
         "type": "Despensa",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/194514_00_1.jpg",
         "price": 7.25,
-        "stock": 20
+        "stock": 100
     },
     {
         "name": "Helado vegano de coco y caramelo Non Dairy Ben & Jerry's 415 g.",
@@ -325,7 +325,7 @@
         "type": "Despensa",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/194405_00_1.jpg",
         "price": 7.25,
-        "stock": 20
+        "stock": 100
     },
     {
         "name": "Judías verdes extra finas Bonduelle sin lactosa 280 g.",
@@ -333,7 +333,7 @@
         "type": "Despensa",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/735579_00_1.jpg",
         "price": 3.75,
-        "stock": 20
+        "stock": 100
     },
     {
         "name": "Kétchup Carrefour envase 560 g.",
@@ -341,7 +341,7 @@
         "type": "Despensa",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/438870_00_1.jpg",
         "price": 0.75,
-        "stock": 20
+        "stock": 100
     },
     {
         "name": "Lasaña de verduras ecológica Vivibio sin gluten sin lactosa 250 g.",
@@ -349,7 +349,7 @@
         "type": "Despensa",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/184519_00_1.jpg",
         "price": 3.49,
-        "stock": 20
+        "stock": 100
     },
     {
         "name": "Lenteja cocida categoría extra Luengo 400 g.",
@@ -357,7 +357,7 @@
         "type": "Despensa",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/032626_00_1.jpg",
         "price": 0.94,
-        "stock": 20
+        "stock": 100
     },
     {
         "name": "Lonchas veganas sabor finas hierbas ecológicas Ecocesta 100 g.",
@@ -365,7 +365,7 @@
         "type": "Despensa",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/026218_00_1.jpg",
         "price": 3.25,
-        "stock": 20
+        "stock": 100
     },
     {
         "name": "Lonchas veganas sabor salami ecológicas Ecocesta 100 g.",
@@ -373,7 +373,7 @@
         "type": "Despensa",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/026195_00_1.jpg",
         "price": 2.95,
-        "stock": 20
+        "stock": 100
     },
     {
         "name": "Macarrones Carrefour 1 kg.",
@@ -381,7 +381,7 @@
         "type": "Despensa",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/226607_00_1.jpg",
         "price": 0.73,
-        "stock": 20
+        "stock": 100
     },
     {
         "name": "Maíz tierno dulce Bonduelle sin lactosa pack de 3 unidades de 140 g.",
@@ -389,7 +389,7 @@
         "type": "Despensa",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/048156_00_1.jpg",
         "price": 2.55,
-        "stock": 20
+        "stock": 100
     },
     {
         "name": "Margarina sin aceite de palma Flora sin gluten 225 g.",
@@ -397,7 +397,7 @@
         "type": "Despensa",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/827716_00_1.jpg",
         "price": 1.99,
-        "stock": 20
+        "stock": 100
     },
     {
         "name": "Papadelta sabor jamón Grefusa 65 g.",
@@ -405,7 +405,7 @@
         "type": "Despensa",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/097072_00_1.jpg",
         "price": 1.16,
-        "stock": 20
+        "stock": 100
     },
     {
         "name": "Pastel de gloria Carrefour 300 g.",
@@ -413,7 +413,7 @@
         "type": "Despensa",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/292496_00_1.jpg",
         "price": 3.06,
-        "stock": 20
+        "stock": 100
     },
     {
         "name": "Patatas fritas sabor Campesina Carrefour 150 g.",
@@ -421,7 +421,7 @@
         "type": "Despensa",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/130123_00_1.jpg",
         "price": 0.9,
-        "stock": 20
+        "stock": 100
     },
     {
         "name": "Perejil Carmencita 8 g.",
@@ -429,7 +429,7 @@
         "type": "Despensa",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/002179_00_1.jpg",
         "price": 1.49,
-        "stock": 20
+        "stock": 100
     },
     {
         "name": "Postre vegetal de caramelo con leche de almendra Andros pack de 2 unidades de 120 g.",
@@ -437,7 +437,7 @@
         "type": "Despensa",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/070798_00_1.jpg",
         "price": 1.88,
-        "stock": 20
+        "stock": 100
     },
     {
         "name": "Postre vegetal de chocolate con leche de almendra Andros pack de 2 unidades de 120 g.",
@@ -445,7 +445,7 @@
         "type": "Despensa",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/070786_00_1.jpg",
         "price": 1.88,
-        "stock": 20
+        "stock": 100
     },
     {
         "name": "Quinoa con lentejas ecológica Ecocesta 250 g.",
@@ -453,7 +453,7 @@
         "type": "Despensa",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/105004_00_1.jpg",
         "price": 3.05,
-        "stock": 20
+        "stock": 100
     },
     {
         "name": "Quinoa con tomate y olivas ecológica Ecocesta 250 g.",
@@ -461,7 +461,7 @@
         "type": "Despensa",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/105021_00_1.jpg",
         "price": 3.05,
-        "stock": 20
+        "stock": 100
     },
     {
         "name": "Salsa de soja Kikkoman 250 ml.",
@@ -469,7 +469,7 @@
         "type": "Despensa",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/595118_00_1.jpg",
         "price": 3.29,
-        "stock": 20
+        "stock": 100
     },
     {
         "name": "Salsa hummus clásico Y Griega envase 420 g.",
@@ -477,7 +477,7 @@
         "type": "Despensa",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/837988_00_1.jpg",
         "price": 2.85,
-        "stock": 20
+        "stock": 100
     },
     {
         "name": "Salsa vegana Hellmann’s sin gluten tarro 280 ml.",
@@ -485,7 +485,7 @@
         "type": "Despensa",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/036325_00_1.jpg",
         "price": 2.5,
-        "stock": 20
+        "stock": 100
     },
     {
         "name": "Tiburón vegetal Carrefour 500 g.",
@@ -493,7 +493,7 @@
         "type": "Despensa",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/507045_00_1.jpg",
         "price": 0.86,
-        "stock": 20
+        "stock": 100
     },
     {
         "name": "Tomate frito Orlando sin gluten pack de 3 briks de 350 g.",
@@ -501,7 +501,7 @@
         "type": "Despensa",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/146861_00_1.jpg",
         "price": 2.01,
-        "stock": 20
+        "stock": 100
     },
     {
         "name": "Tortillas de trigo para fajitas Mexifoods sin lactosa 8 ud.",
@@ -509,7 +509,7 @@
         "type": "Despensa",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/053017_00_1.jpg",
         "price": 1.22,
-        "stock": 20
+        "stock": 100
     },
     {
         "name": "Turrón a la piedra De Nuestra Tierra sin gluten 250 g.",
@@ -517,7 +517,7 @@
         "type": "Despensa",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/397116_00_1.jpg",
         "price": 4.45,
-        "stock": 20
+        "stock": 100
     },
     {
         "name": "15 Bolsas de basura Reciclaje envases Handy Bag 30 Litros - Amarillas",
@@ -525,7 +525,7 @@
         "type": "Limpieza y Hogar",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/487927_00_1.jpg",
         "price": 2.8,
-        "stock": 20
+        "stock": 100
     },
     {
         "name": "Ambientador lavanda Carrefour 300 ml.",
@@ -533,7 +533,7 @@
         "type": "Limpieza y Hogar",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/945131_00_1.jpg",
         "price": 0.9,
-        "stock": 20
+        "stock": 100
     },
     {
         "name": "Cajas de Fósforos  pequeños",
@@ -541,7 +541,7 @@
         "type": "Limpieza y Hogar",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/911034_00_1.jpg",
         "price": 0.99,
-        "stock": 20
+        "stock": 100
     },
     {
         "name": "Detergente en cápsulas 3 en 1 Alpine Ariel 24 ud.",
@@ -549,7 +549,7 @@
         "type": "Limpieza y Hogar",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/042350_00_1.jpg",
         "price": 7.75,
-        "stock": 20
+        "stock": 100
     },
     {
         "name": "Film transparente con sierra de corte Carrefour 60 metros.",
@@ -557,7 +557,7 @@
         "type": "Limpieza y Hogar",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/467751_00_1.jpg",
         "price": 0.78,
-        "stock": 20
+        "stock": 100
     },
     {
         "name": "Lavavajillas máquina quantum ultimate en pastillas Finish 65 ud.",
@@ -565,7 +565,7 @@
         "type": "Limpieza y Hogar",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/217706_00_1.jpg",
         "price": 20.05,
-        "stock": 20
+        "stock": 100
     },
     {
         "name": "Limpiador multiusos Las 3 Brujas 750 ml.",
@@ -573,7 +573,7 @@
         "type": "Limpieza y Hogar",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/467256_00_1.jpg",
         "price": 2.35,
-        "stock": 20
+        "stock": 100
     },
     {
         "name": "Papel de aluminio Albal 30 metros.",
@@ -581,7 +581,7 @@
         "type": "Limpieza y Hogar",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/007736_00_1.jpg",
         "price": 3.15,
-        "stock": 20
+        "stock": 100
     },
     {
         "name": "Papel higiénico húmedo aloe vera Carrefour pack de 2 paquetes de 60 ud.",
@@ -589,7 +589,7 @@
         "type": "Limpieza y Hogar",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/266752_00_1.jpg",
         "price": 1.8,
-        "stock": 20
+        "stock": 100
     },
     {
         "name": "Papel higiénico húmedo Carrefour 15 ud.",
@@ -597,7 +597,7 @@
         "type": "Limpieza y Hogar",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/965206_00_1.jpg",
         "price": 0.68,
-        "stock": 20
+        "stock": 100
     },
     {
         "name": "Papel higiénico húmedo sensitive Carrefour 70 ud.",
@@ -605,7 +605,7 @@
         "type": "Limpieza y Hogar",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/436717_00_1.jpg",
         "price": 1.69,
-        "stock": 20
+        "stock": 100
     },
     {
         "name": "Champú en seco oriental Batiste 200 ml.",
@@ -613,7 +613,7 @@
         "type": "Perfumería e Higiene",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/289364_00_1.jpg",
         "price": 3.6,
-        "stock": 20
+        "stock": 100
     },
     {
         "name": "Crema cuidado integral para pieles atópicas Instituto Español 400 ml.",
@@ -621,7 +621,7 @@
         "type": "Perfumería e Higiene",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/903397_00_1.jpg",
         "price": 5.6,
-        "stock": 20
+        "stock": 100
     },
     {
         "name": "Dentrífico original Kemphor pack de 2 unidades de 75 ml.",
@@ -629,7 +629,7 @@
         "type": "Perfumería e Higiene",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/607104_00_1.jpg",
         "price": 3.3,
-        "stock": 20
+        "stock": 100
     },
     {
         "name": "Desodorante roll-on sensitive sin alcohol Babaria 50 ml.",
@@ -637,7 +637,7 @@
         "type": "Perfumería e Higiene",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/019847_00_1.jpg",
         "price": 1.07,
-        "stock": 20
+        "stock": 100
     },
     {
         "name": "Gel de ducha candy fantasy Tulipán Negro 600 ml.",
@@ -645,7 +645,7 @@
         "type": "Perfumería e Higiene",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/979139_00_1.jpg",
         "price": 1.87,
-        "stock": 20
+        "stock": 100
     },
     {
         "name": "Maquinilla Venus ComfortGlide Breeze Gillette + Recambio 1 ud.",
@@ -653,7 +653,7 @@
         "type": "Perfumería e Higiene",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/769593_00_1.jpg",
         "price": 5.45,
-        "stock": 20
+        "stock": 100
     },
     {
         "name": "Peine cola de ratón Ponette 1 ud.",
@@ -661,7 +661,7 @@
         "type": "Perfumería e Higiene",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/374147_00_1.jpg",
         "price": 1.06,
-        "stock": 20
+        "stock": 100
     },
     {
         "name": "Recambio maquinilla Venus Breeze Gillette 4 ud.",
@@ -669,7 +669,7 @@
         "type": "Perfumería e Higiene",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/063226_00_1.jpg",
         "price": 11,
-        "stock": 20
+        "stock": 100
     },
     {
         "name": "Cortadillos con cabello de ángel Ines Rosales 226 g.",
@@ -677,7 +677,7 @@
         "type": "Productos Frescos",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/381451_00_1.jpg",
         "price": 1.34,
-        "stock": 20
+        "stock": 100
     },
     {
         "name": "Lonchas veganas sabor queso ecológicas Violife 200 g.",
@@ -685,7 +685,7 @@
         "type": "Productos Frescos",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/253423_00_1.jpg",
         "price": 3.55,
-        "stock": 20
+        "stock": 100
     },
     {
         "name": "Pan de hamburguesa maxi Carrefour 4 ud.",
@@ -693,7 +693,7 @@
         "type": "Productos Frescos",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/447078_00_1.jpg",
         "price": 0.78,
-        "stock": 20
+        "stock": 100
     },
     {
         "name": "Pan de molde con cereales, semillas y frutos rojos Oroweat 680 g.",
@@ -701,7 +701,7 @@
         "type": "Productos Frescos",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/859605_00_1.jpg",
         "price": 2.65,
-        "stock": 20
+        "stock": 100
     },
     {
         "name": "Panecillos para perritos Bimbo 330 g.",
@@ -709,7 +709,7 @@
         "type": "Productos Frescos",
         "image": "https://static.carrefour.es/hd_350x_/img_pim_food/002805_00_1.jpg",
         "price": 1.18,
-        "stock": 20
+        "stock": 100
     },
     {
         "name": "Bicicleta Estática Spinning Fit Pro Eco-814 Eco‐de",
@@ -725,6 +725,6 @@
         "type": "Papelería",
         "image": "https://static.carrefour.es/hd_510x_/crs/cdn_static/catalog/hd/179824_00_1.jpg",
         "price": 3.90,
-        "stock": 20
+        "stock": 100
     }
 ]

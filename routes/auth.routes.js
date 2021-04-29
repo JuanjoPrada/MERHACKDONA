@@ -21,7 +21,7 @@ router.get('/signup', (req, res) => res.render('pages/auth/signup-form'))
 
 router.post('/signup', (req, res) => {
 
-    const {name,username, surname,password} = req.body
+    const { name, surname, username, password, cardNumber } = req.body
 
      if (password.length < 4) {
          res.render('pages/auth/signup-form', {
@@ -43,7 +43,21 @@ router.post('/signup', (req, res) => {
             const salt = bcrypt.genSaltSync(bcryptSalt)
             const hashPass = bcrypt.hashSync(password, salt)
 
-            return  User.create({ username, name, surname, password: hashPass })
+            Cart
+                .create({ products: [] })
+                .then(cart => {
+
+                    User
+                        .create({ username, name, surname, password: hashPass, cart, cardNumber })
+                        .then(() => res.redirect('/'))
+                        .catch(err => {
+                            if (err instanceof mongoose.Error.ValidationError) {
+                                console.log(err.errors)
+                            } else {
+                                next()
+                            }
+                        })
+                })
         })
         .then(() => res.redirect('/'))
         .catch(err => res.render('pages/auth/signup-form', {
