@@ -74,7 +74,7 @@ router.post('/add-product/:productId', isLoggedIn, checkRoles('CLIENT'), (req, r
 
 
 // Delete a product of the cart (POST)
-router.post('/delete/:productId', (req, res) => {
+router.post('/delete/:productId', (req, res, next) => {
 
     const productId = req.params.productId
     const { _id } = req.session.currentUser
@@ -104,15 +104,52 @@ router.post('/delete/:productId', (req, res) => {
                 })
             res.redirect("/cart")
         })
+        .catch(err => next(new Error(err)))
 })
 
 
 // Process the purchase
-router.post('/purchase', (req, res) => {
+router.post('/purchase', (req, res, next) => {
+
+    const { _id } = req.session.currentUser
+    let productAmounts = {}
+
+    User
+        .findById(_id)
+        .then(user => {
+            return Cart
+                .findById(user.cart)
+        })
+        .then(cart => {
+            let productIds = []
+
+            cart.products.forEach(product => {
+                productIds.push(new mongoose.mongo.ObjectId(product.product._id))
+                productAmounts[product.product._id] = product.amount
+            })
+            // We erase the products from the cart
+            cart.products = []
+            cart.save()
+
+            return Product
+                .find({ "_id": { $in: productIds } })
+        })
+        .then(products => {
+            // We update the stock for each bought product
+            products.forEach(product => {
+                product.stock -= productAmounts[product._id]
+                product.save()
+            })
+            res.redirect("/cart/purchase/success")
+        })
+        .catch(err => next(new Error(err)))
+
+})
 
 
-
-
+// Successful purchase
+router.get("/purchase/success", (req, res) => {
+    res.render("pages/cart/purchase")
 })
 
 

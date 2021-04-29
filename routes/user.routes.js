@@ -35,10 +35,10 @@ router.get('/edit-profile', isLoggedIn, checkRoles('CLIENT'), (req, res, next) =
 
 router.post('/edit-profile', isLoggedIn, checkRoles('CLIENT'), (req, res, next) => {
     const { _id } = req.session.currentUser
-    const { name, surname, username, password, address, cardNumber } = req.body
-    console.log(_id)
+    const { name, surname, username, address, cardNumber } = req.body
+
     User
-        .findByIdAndUpdate(_id, { name, surname, username, password, address, cardNumber }, { new: true })
+        .findByIdAndUpdate(_id, { name, surname, username, address, cardNumber }, { new: true })
         .then((userUpdate) => {
             req.session.currentUser = userUpdate
             res.redirect('/user/profile')

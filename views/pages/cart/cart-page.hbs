@@ -29,12 +29,13 @@
 
         </div>
         {{/each}}
+        <form action="/cart/purchase" method="POST">
+            <button type="submit" class="btn btn-dark">Confirmar compra</button>
+        </form>
+        <br>
+        <a href="/" class="btn btn-dark">Seguir comprando</a>
     </div>
 </div>
 <hr>
 <br>
-<form action="/cart/purchase" method="POST">
-    <button type="submit" class="btn btn-dark">Confirmar compra</button>
-</form>
-<a href="/" class="btn btn-dark">Seguir comprando</a>
 </div>

@@ -21,7 +21,7 @@ router.get('/signup', (req, res) => res.render('pages/auth/signup-form'))
 
 router.post('/signup', (req, res, next) => {
 
-    const { name, surname, username, password } = req.body
+    const { name, surname, username, password, cardNumber } = req.body
 
     User
         .findOne({ username })
@@ -39,7 +39,7 @@ router.post('/signup', (req, res, next) => {
                 .then(cart => {
 
                     User
-                        .create({ username, name, surname, password: hashPass, cart })
+                        .create({ username, name, surname, password: hashPass, cart, cardNumber })
                         .then(() => res.redirect('/'))
                         .catch(err => {
                             if (err instanceof mongoose.Error.ValidationError) {

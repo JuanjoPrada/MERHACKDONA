@@ -1,12 +1,12 @@
 <div class="container">
 
     <div class="row justify-content-center">
-        
+
         <div class="col-md-6">
-           {{#with theUser}}
+            {{#with theUser}}
             <h1>Editar Perfil</h1>
             <hr>
-                
+
             <form action="/user/edit-profile/{{id}}" method="POST">
                 <div class="form-group">
                     <label for="username">Nombre de usuario</label>
@@ -25,12 +25,8 @@
                     <input type="text" class="form-control" id="address" name="address" value="{{address}}">
                 </div>
                 <div class="form-group">
-                    <label for="password">Contraseña</label>
-                    <input type="password" class="form-control" id="password" name="password" value="{{password}}">
-                </div>
-                <div class="form-group">
-                    <label for="creditCard">Targeta de Crédito/Débito</label>
-                    <input type="text" class="form-control" id="creditCard" name="creditCard" value="{{creditCard}}">
+                    <label for="cardNumber">Tarjeta de Crédito/Débito</label>
+                    <input type="text" class="form-control" id="cardNumber" name="cardNumber" value="{{cardNumber}}">
                 </div>
 
                 <button type="submit" class="btn btn-dark btn-block">Confirmar Edición</button>
@@ -42,6 +38,6 @@
             </form>
             {{/with}}
         </div>
-        
+
     </div>
 </div>
