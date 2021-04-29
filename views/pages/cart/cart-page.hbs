@@ -1,7 +1,6 @@
 <div class="container">
     <h1>Mi carrito</h1>
     <hr>
-    <form action="/cart/cart-page" method="POST"></form>
     <div class="form-group">
         <label for="store-list">Elige tu tienda más cercana:</label>
         <select name="stores" class="form-control" id="store-list">
@@ -34,7 +33,8 @@
 </div>
 <hr>
 <br>
-<button type="submit" class="btn btn-dark">Confirmar compra</button>
+<form action="/cart/purchase" method="POST">
+    <button type="submit" class="btn btn-dark">Confirmar compra</button>
 </form>
 <a href="/" class="btn btn-dark">Seguir comprando</a>
 </div>

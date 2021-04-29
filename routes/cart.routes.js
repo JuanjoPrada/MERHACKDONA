@@ -76,12 +76,43 @@ router.post('/add-product/:productId', isLoggedIn, checkRoles('CLIENT'), (req, r
 // Delete a product of the cart (POST)
 router.post('/delete/:productId', (req, res) => {
 
-    const { productId } = req.params.productId
+    const productId = req.params.productId
+    const { _id } = req.session.currentUser
 
-    Product
-        .findByIdAndDelete(productId)
-        .then(() => res.redirect(`/cart`))
-        .catch(err => console.log('Error!', err))
+    User
+        .findById(_id)
+        .then(user => {
+            Cart
+                .findById(user.cart)
+                .then(cart => {
+                    let productIndex = -1
+
+                    for (let i = 0; i < cart.products.length; i++) {
+                        let product = cart.products[i]
+
+                        if (product.product.toString() === productId) {
+                            productIndex = i
+                            break
+                        }
+                    }
+
+                    if (productIndex >= 0) {
+                        cart.products.splice(productIndex, 1)
+                    }
+
+                    cart.save()
+                })
+            res.redirect("/cart")
+        })
+})
+
+
+// Process the purchase
+router.post('/purchase', (req, res) => {
+
+
+
+
 })
 
 

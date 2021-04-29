@@ -4,7 +4,7 @@ const router = express.Router()
 const Store = require("./../models/store.model")
 const Product = require("./../models/product.model")
 
-// Endpoints
+// Filter for the search input on index
 router.get("/", (req, res) => {
     let filter = req.query.filter
     let query = {}
