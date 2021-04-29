@@ -4,14 +4,14 @@ module.exports = {
             next()
         }
         else {
-            res.render('pages/user/login-form', { errorMessage: 'Inicia sesión para acceder' })
+            res.render('pages/auth/login-form', { errorMessage: 'Inicia sesión para acceder' })
         }
     },
-    checkRoles: (...allowedRoles) => (req, res, next) => {          // REST PARAMETERS
+    checkRoles: (...allowedRoles) => (req, res, next) => {          
         if (allowedRoles.includes(req.session.currentUser.role)) {
             next()
         } else {
-            res.render('pages/user/login-form', { errorMessage: 'Desautorizado' })
+            res.render('pages/auth/login-form', { errorMessage: 'Desautorizado' })
         }
     }
 }

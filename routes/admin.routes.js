@@ -4,6 +4,7 @@ const bcrypt = require("bcrypt")
 const bcryptSalt = 10
 
 const { checkRoles, isLoggedIn } = require('./../middlewares')
+const { checkMongooseError } = require('./../utils')
 
 const mongoose = require('mongoose')
 
@@ -13,13 +14,11 @@ const Store = require('./../models/store.model')
 
 
 // Create a new product (get)
-
 router.get('/create-product', (req, res) => res.render('pages/admin/create-product'))
 
 
 
 // Create a new product (post)
-
 router.post('/create-product', (req, res) => {
 
     const { name, description, type, image, price, stock } = req.body
@@ -32,7 +31,6 @@ router.post('/create-product', (req, res) => {
 
 
 // Show the products in stock (get)
-
 router.get('/products-list', (req, res) => {
 
     Product
@@ -43,10 +41,9 @@ router.get('/products-list', (req, res) => {
 
 
 // Edit a product (get)
-
 router.get("/edit-product/:productId", (req, res) => {
+
     let productId = req.params.productId
-    // console.log(productId)
 
     Product
         .findById(productId)
@@ -56,9 +53,7 @@ router.get("/edit-product/:productId", (req, res) => {
 })
 
 
-
 // Edit a product (post)
-
 router.post('/edit-product/:productId', (req, res) => {
 
     const productId = req.params.productId
@@ -86,7 +81,6 @@ router.post("/delete-product/:productId", (req, res) => {
 
 
 // Show all the stores
-
 router.get('/stores-list', (req, res) => {
 
     Store
@@ -133,7 +127,6 @@ router.post('/edit-store/:storeId', (req, res) => {
 
 
 // Delete a store
-
 router.post("/delete-store/:storeId", (req, res) => {
     let storeId = req.params.storeId
 
@@ -146,13 +139,12 @@ router.post("/delete-store/:storeId", (req, res) => {
 
 
 // Admin Panel
-
 router.get('/admin-panel', isLoggedIn, checkRoles('ADMIN'), (req, res) => {
     res.render('pages/admin/admin-page', { user: req.session.currentUser })
 })
 
-// Create new Store
 
+// Create new Store
 router.get('/create-store', (req, res) => {
 
     Store
@@ -171,11 +163,11 @@ router.post('/create-store', (req, res) => {
         coordinates: [latitude, longitude]
     }
 
-
     Store
         .create({ name, location })
         .then(() => res.redirect('/admin/admin-panel'))
         .catch(err => next(new Error(err)))
 })
+
 
 module.exports = router

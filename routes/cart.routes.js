@@ -14,11 +14,15 @@ const Product = require("./../models/product.model")
 const Store = require('./../models/store.model')
 const Cart = require('../models/cart.model')
 
+
+// Cart (get)
 router.get('/cart', isLoggedIn, checkRoles('CLIENT'), (req, res, next) => {
+
     const storesPromise = Store.find()
+
     Promise
         .all([storesPromise])
-        .then(results => res.render('pages/user/cart', {
+        .then(results => res.render('pages/cart/cart-page', {
             allStores: results[0],
             /* selectedProducts: results[1] */
         }))
@@ -26,14 +30,13 @@ router.get('/cart', isLoggedIn, checkRoles('CLIENT'), (req, res, next) => {
 })
 
 
+// Cart (post)
 router.post('/cart/add-product/:productId', isLoggedIn, checkRoles('CLIENT'), (req, res, next) => {
-    const {
-        amount
-    } = req.body
+
+    const {amount} = req.body
     const productId = req.params.productId
-    const {
-        _id
-    } = req.session.currentUser
+    const { _id } = req.session.currentUser
+    
     User
         .findById(_id)
         .then(user => {

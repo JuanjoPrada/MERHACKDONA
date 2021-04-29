@@ -16,8 +16,8 @@ const Cart = require('../models/cart.model')
 
 
 // Signup form
-
 router.get('/signup', (req, res) => res.render('pages/auth/signup-form'))
+
 
 router.post('/signup', (req, res, next) => {
 
@@ -45,17 +45,15 @@ router.post('/signup', (req, res, next) => {
                     }
                 })
         })
-        .catch(err => next(new Error(err)))
+        .catch(err => res.render('pages/auth/signup-form', { errorMessage: checkMongooseError(err) }))
 })
 
 
 // Login (get)
-
 router.get('/login', (req, res) => res.render('pages/auth/login-form'))
 
 
 // Login (post)
-
 router.post('/login', (req, res) => {
 
     const { username, password } = req.body
@@ -84,7 +82,6 @@ router.post('/login', (req, res) => {
 
 
 // Logout
-
 router.get('/logout', (req, res) => {
     req.session.destroy((err) => res.redirect("/"));
 })

@@ -15,19 +15,23 @@ const Cart = require('../models/cart.model')
 
 // Signup form
 
-router.get('/signup', (req, res) => res.render('pages/user/signup-form'))
+router.get('/signup', (req, res) => res.render('pages/auth/signup-form'))
+
 router.post('/signup', (req, res, next) => {
+
     const { name, surname, username, password } = req.body
+
     User
         .findOne({ username })
         .then(user => {
             if (user) {
-                res.render('pages/user/signup-form', { errorMessage: 'This user already exist' })
+                res.render('pages/auth/signup-form', { errorMessage: 'This user already exist' })
                 return
             }
             const salt = bcrypt.genSaltSync(bcryptSalt)
             const hashPass = bcrypt.hashSync(password, salt)
             let cartObj
+
             Cart
                 .create({ products: [] })
                 .then(cart => {
@@ -48,38 +52,12 @@ router.post('/signup', (req, res, next) => {
 })
 
 
-// Login (get)
-
-router.get('/login', (req, res) => res.render('pages/user/login-form'))
-// Login (post)
-router.post('/login', (req, res) => {
-    const { username, password } = req.body
-    User
-        .findOne({
-            username
-        })
-        .then(user => {
-            if (!user) {
-                res.render('pages/user/login-form', { errorMessage: 'Usuario no reconocido' })
-                return
-            }
-            if (bcrypt.compareSync(password, user.password) === false) {
-                res.render('pages/user/login-form', { errorMessage: 'Contraseña incorrecta' })
-                return
-            }
-            req.session.currentUser = user
-            res.redirect('/')
-        })
-        .catch(err => console.log('error', err))
-})
-// Logout
-router.get('/logout', (req, res) => {
-    req.session.destroy((err) => res.redirect("/"));
-})
 // User profile
 router.get('/profile', isLoggedIn, checkRoles('CLIENT'), (req, res) => {
     res.render('pages/user/profile-page', { user: req.session.currentUser })
 })
+
+
 // Edit profile
 router.get('/edit-profile', isLoggedIn, checkRoles('CLIENT'), (req, res, next) => {
     const { user_id } = req.params
@@ -91,6 +69,8 @@ router.get('/edit-profile', isLoggedIn, checkRoles('CLIENT'), (req, res, next) =
             return err;
         })
 })
+
+
 router.post('/edit-profile', isLoggedIn, checkRoles('CLIENT'), (req, res, next) => {
     const { _id } = req.session.currentUser
     const { name, surname, username, password, address, cardNumber } = req.body
@@ -107,6 +87,8 @@ router.post('/edit-profile', isLoggedIn, checkRoles('CLIENT'), (req, res, next) 
             return err;
         })
 })
+
+
 // Delete Profile
 router.post('/delete-profile', isLoggedIn, checkRoles("CLIENT"), (req, res) => {
     const { _id } = req.session.currentUser
