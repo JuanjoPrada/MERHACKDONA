@@ -34,15 +34,20 @@ router.post('/signup', (req, res, next) => {
             const salt = bcrypt.genSaltSync(bcryptSalt)
             const hashPass = bcrypt.hashSync(password, salt)
 
-            User
-                .create({ username, name, surname, password: hashPass })
-                .then(() => res.redirect('/'))
-                .catch(err => {
-                    if (err instanceof mongoose.Error.ValidationError) {
-                        console.log(err.errors)
-                    } else {
-                        next()
-                    }
+            Cart
+                .create({ products: [] })
+                .then(cart => {
+
+                    User
+                        .create({ username, name, surname, password: hashPass, cart })
+                        .then(() => res.redirect('/'))
+                        .catch(err => {
+                            if (err instanceof mongoose.Error.ValidationError) {
+                                console.log(err.errors)
+                            } else {
+                                next()
+                            }
+                        })
                 })
         })
         .catch(err => res.render('pages/auth/signup-form', { errorMessage: checkMongooseError(err) }))

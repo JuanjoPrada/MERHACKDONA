@@ -1,7 +1,7 @@
 <div class="container">
     <h1>Mi carrito</h1>
     <hr>
-    <form action="/cart/cart" method="POST"></form>
+    <form action="/cart/cart-page" method="POST"></form>
     <div class="form-group">
         <label for="store-list">Elige tu tienda más cercana:</label>
         <select name="stores" class="form-control" id="store-list">
@@ -16,30 +16,20 @@
     <div class="row">
         {{#each selectedProducts}}
         <div class="col-3">
+
             <hr>
             <img src="{{product.image}}" alt="{{product.name}}" <h5>| <strong>{{product.name}}</strong> |</h5>
             <br>
-<<<<<<< HEAD:views/pages/cart/cart-page.hbs
-            <p>Descripción:<br>{{description}}</p>
-            <p>Tipo: {{type}}</p>
-            <p>Precio: {{price}}€/ud</p>
-            <p>Unidades: €/ud</p>
-            <a href="/cart/cart/edit/{{id}}" class="btn btn-dark">Editar</a>
-            <a href="/cart/cart/delete/{{id}}" class="btn btn-dark">Eliminar</a>
-
-            </div>
-            {{/each}}
-       
-=======
             <p>Descripción:<br>{{product.description}}</p>
             <p>Tipo: {{product.type}}</p>
             <p>Precio: {{product.price}}€/ud</p>
             <p>Unidades: {{amount}}</p>
-            <a href="/cart/delete/{{product.id}}" class="btn btn-dark">Eliminar</a>
+            <form action="/cart/delete/{{product.id}}" method="POST" class="deleteForm">
+                <button class="btn btn-dark">Eliminar</button>
+            </form>
 
         </div>
         {{/each}}
->>>>>>> 1b3694814eb409f69eb95a588f05727a498a0388:views/pages/cart/cart.hbs
     </div>
 </div>
 <hr>

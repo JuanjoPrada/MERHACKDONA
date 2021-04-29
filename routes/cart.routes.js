@@ -8,12 +8,13 @@ const mongoose = require('mongoose')
 const { isLoggedIn, checkRoles } = require('./../middlewares')
 const { isClient, checkMongooseError } = require('./../utils')
 
-
 const User = require("./../models/user.model")
 const Product = require("./../models/product.model")
 const Store = require('./../models/store.model')
 const Cart = require('../models/cart.model')
 
+
+// Show the stores and populate the products for the cart (GET)
 router.get('/', isLoggedIn, checkRoles('CLIENT'), (req, res, next) => {
     const storesPromise = Store
         .find()
@@ -28,7 +29,7 @@ router.get('/', isLoggedIn, checkRoles('CLIENT'), (req, res, next) => {
     Promise
         .all([storesPromise, productsPromise])
         .then(results => {
-            res.render('pages/cart/cart', {
+            res.render('pages/cart/cart-page', {
                 allStores: results[0],
                 selectedProducts: results[1].products
             })
@@ -37,13 +38,13 @@ router.get('/', isLoggedIn, checkRoles('CLIENT'), (req, res, next) => {
 })
 
 
+// Add a product to cart (POST)
 router.post('/add-product/:productId', isLoggedIn, checkRoles('CLIENT'), (req, res, next) => {
-    const {
-        amount
-    } = req.body
+
+    const { amount } = req.body
     const productId = req.params.productId
     const { _id } = req.session.currentUser
-    
+
     User
         .findById(_id)
         .then(user => {
@@ -69,6 +70,18 @@ router.post('/add-product/:productId', isLoggedIn, checkRoles('CLIENT'), (req, r
                 })
             res.json("ok")
         })
+})
+
+
+// Delete a product of the cart (POST)
+router.post('/delete/:productId', (req, res) => {
+
+    const { productId } = req.params.productId
+
+    Product
+        .findByIdAndDelete(productId)
+        .then(() => res.redirect(`/cart`))
+        .catch(err => console.log('Error!', err))
 })
 
 
