@@ -5,7 +5,7 @@ const Store = require("./../models/store.model")
 const Product = require("./../models/product.model")
 
 // Endpoints
-router.get("/", (req, res) => {
+router.get("/", (req, res, next) => {
     let filter = req.query.filter
     let query = {}
 
@@ -23,10 +23,11 @@ router.get("/", (req, res) => {
 
     Product
         .find(query)
+        
         .then(products => {
             res.render("pages/index", { products });
         })
-        .catch(err => console.log("Error!", err))
+        .catch(err => next(new Error(err)))
 })
 
 module.exports = router

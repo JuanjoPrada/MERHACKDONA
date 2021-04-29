@@ -34,7 +34,11 @@
                 <br>
                 <button type="submit" class="btn btn-dark">Guardar edición del producto</button>
                 <a href="/admin/products-list" class="btn btn-dark">Volver</a>
-
+                {{#if errorMessage}}
+                <div id="error">
+                    <p>{{{errorMessage}}}</p>
+                </div>
+                {{/if}}
                 <br><br><br>
 
             </form>

@@ -7,5 +7,6 @@ module.exports = app => {
     app.use('/user', require('./user.routes.js'))
     app.use('/cart', require('./cart.routes.js'))
     app.use('/admin', require('./admin.routes.js'))
+    app.use('/contact', require('./contact.routes.js'))
     app.use('/api', require('./api.routes.js'))
 }

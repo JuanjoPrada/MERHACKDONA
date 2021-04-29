@@ -32,7 +32,11 @@
 
                 <br>
                 <button type="submit" class="btn btn-dark">Crear producto</button>
-              
+                {{#if errorMessage}}
+                <div id="error">
+                    <p>{{{errorMessage}}}</p>
+                </div>
+                {{/if}}
                 <a href="/admin/admin-page" class="btn btn-dark">Volver</a>
                 <br><br><br>
 

@@ -9,20 +9,20 @@ function obfuscate(cc) {
 const userSchema = new Schema({
     name: {
         type: String,
-        required: true
+        required: [true, 'Debes introducir tu nombre']
     },
     surname: {
         type: String,
-        required: true
+        required: [true, 'Debes introducir tu apellido']
     },
     username: {
         type: String,
         unique: true,
-        require: true
+        require: [true, 'Debes introducir un nombre de usuario']
     },
     password: {
         type: String,
-        required: true
+        required: [true, 'Debes introducir una contraseña']
     },
     address: {
         type: String
@@ -44,7 +44,7 @@ const userSchema = new Schema({
         ref: "Cart"
     },
     conditions: {
-        type: Boolean,
+        type: Boolean
     }
 }, {
     timestamps: true

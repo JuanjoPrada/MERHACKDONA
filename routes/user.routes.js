@@ -25,41 +25,43 @@ router.get('/edit-profile', isLoggedIn, checkRoles('CLIENT'), (req, res, next) =
     const { user_id } = req.params
     User
         .findById(user_id)
+        .select('name surname username address cardNumber')
         .then(theUser => res.render('pages/user/edit-profile-page', { theUser: req.session.currentUser })) //REQ CURRENT SESSION=????
-        .catch(err => {
-            next();
-            return err;
-        })
+        .catch(err => next(new Error(err)))
 })
 
 
 router.post('/edit-profile', isLoggedIn, checkRoles('CLIENT'), (req, res, next) => {
     const { _id } = req.session.currentUser
-    const { name, surname, username, password, address, cardNumber } = req.body
-    console.log(_id)
+    const { name, surname, username, address, cardNumber } = req.body
+   
+    //  if ((!username) || (!surname) || (!name)) {
+    //      res.render('pages/user/edit-profile-page', {
+    //          errorMessage: 'Por favor rellene los campos requeridos con "*"'
+    //      })
+    //      return
+    //  }
+
     User
-        .findByIdAndUpdate(_id, { name, surname, username, password, address, cardNumber }, { new: true })
+        .findByIdAndUpdate(_id, { name, surname, username, address, cardNumber }, { new: true })
         .then((userUpdate) => {
+                     
             req.session.currentUser = userUpdate
             res.redirect('/user/profile')
         })
-        .catch(err => {
-            console.log(err)
-            next();
-            return err;
-        })
+        .catch(err => next(new Error(err)))
 })
 
 
 // Delete Profile
-router.post('/delete-profile', isLoggedIn, checkRoles("CLIENT"), (req, res) => {
+router.post('/delete-profile', isLoggedIn, checkRoles("CLIENT"), (req, res, next) => {
     const { _id } = req.session.currentUser
     User
         .findByIdAndDelete(_id)
         .then(() => {
             req.session.destroy((err) => res.redirect("/"))
         })
-        .catch(err => console.log('Error!', err))
+        .catch(err => next(new Error(err)))
 })
 
 

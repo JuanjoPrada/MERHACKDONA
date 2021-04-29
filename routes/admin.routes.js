@@ -26,22 +26,25 @@ router.post('/create-product', (req, res) => {
     Product
         .create({ name, description, type, image, price, stock })
         .then(() => res.redirect('/admin/products-list'))
-        .catch(err => next(new Error(err)))
+        .catch(err => res.render('pages/admin/create-product', {
+             errorMessage: checkMongooseError(err)
+         }))
 })
 
 
 // Show the products in stock (get)
-router.get('/products-list', (req, res) => {
+router.get('/products-list', (req, res, next) => {
 
     Product
         .find()
+        .select('-image')
         .then(allProducts => res.render('pages/admin/products-list', { allProducts }))
         .catch(err => next(new Error(err)))
 })
 
 
 // Edit a product (get)
-router.get("/edit-product/:productId", (req, res) => {
+router.get("/edit-product/:productId", (req, res, next) => {
 
     let productId = req.params.productId
 
@@ -62,13 +65,15 @@ router.post('/edit-product/:productId', (req, res) => {
     Product
         .findByIdAndUpdate(productId, { name, description, type, image, price, stock })
         .then(() => res.redirect(`/admin/products-list`))
-        .catch(err => next(new Error(err)))
+        .catch(err => res.render('pages/admin/edit-product', {
+            errorMessage: checkMongooseError(err)
+        }))
 
 })
 
 
 // Delete a product
-router.post("/delete-product/:productId", (req, res) => {
+router.post("/delete-product/:productId", (req, res, next) => {
 
     let productId = req.params.productId
 
@@ -81,7 +86,7 @@ router.post("/delete-product/:productId", (req, res) => {
 
 
 // Show all the stores
-router.get('/stores-list', (req, res) => {
+router.get('/stores-list', (req, res, next) => {
 
     Store
         .find()
@@ -90,9 +95,8 @@ router.get('/stores-list', (req, res) => {
 })
 
 
-
 // Edit a store (get)
-router.get("/edit-store/:storeId", (req, res) => {
+router.get("/edit-store/:storeId", (req, res, next) => {
 
     let storeId = req.params.storeId
 
@@ -104,9 +108,8 @@ router.get("/edit-store/:storeId", (req, res) => {
 })
 
 
-
 // Edit a store (post)
-router.post('/edit-store/:storeId', (req, res) => {
+router.post('/edit-store/:storeId', (req, res, next) => {
 
     const storeId = req.params.storeId
     const { name, latitude, longitude } = req.body
@@ -127,7 +130,7 @@ router.post('/edit-store/:storeId', (req, res) => {
 
 
 // Delete a store
-router.post("/delete-store/:storeId", (req, res) => {
+router.post("/delete-store/:storeId", (req, res, next) => {
     let storeId = req.params.storeId
 
     Store
@@ -145,7 +148,7 @@ router.get('/admin-panel', isLoggedIn, checkRoles('ADMIN'), (req, res) => {
 
 
 // Create new Store
-router.get('/create-store', (req, res) => {
+router.get('/create-store', (req, res, next) => {
 
     Store
         .find()
@@ -154,7 +157,7 @@ router.get('/create-store', (req, res) => {
 })
 
 
-router.post('/create-store', (req, res) => {
+router.post('/create-store', (req, res, next) => {
 
     const { name, latitude, longitude } = req.body
 

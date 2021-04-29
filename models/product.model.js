@@ -5,15 +5,15 @@ const Schema = mongoose.Schema;
 const productSchema = new Schema({
     name: {
         type: String,
-        required: true
+        required: [true, 'Debes introducir el nombre del producto']
     },
     description: {
         type: String,
-        required: true
+        required: [true, 'Debes introducir una descripción del producto']
     },
     type: {
         type: String,
-        required: true,
+        required: [true, 'Debes introducir el tipo del producto']
         // enum?
     },
     image: {
@@ -22,12 +22,12 @@ const productSchema = new Schema({
     },
     price: {
         type: Number,
-        required: true,
+        required: [true, 'Debes introducir el precio del producto'],
         min: 0.01
     },
     stock: {
         type: Number,
-        required: true,
+        required: [true, 'Debes introducir el stock disponible del producto'],
         min: 0
     }
 }, {
