@@ -14,26 +14,33 @@ const Product = require("./../models/product.model")
 const Store = require('./../models/store.model')
 const Cart = require('../models/cart.model')
 
-
-// Cart (get)
-router.get('/cart', isLoggedIn, checkRoles('CLIENT'), (req, res, next) => {
-
-    const storesPromise = Store.find()
+router.get('/', isLoggedIn, checkRoles('CLIENT'), (req, res, next) => {
+    const storesPromise = Store
+        .find()
+    const productsPromise = User
+        .findById(req.session.currentUser)
+        .then(user => {
+            return Cart
+                .findById(user.cart)
+                .populate("products.product")
+        })
 
     Promise
-        .all([storesPromise])
-        .then(results => res.render('pages/cart/cart-page', {
-            allStores: results[0],
-            /* selectedProducts: results[1] */
-        }))
+        .all([storesPromise, productsPromise])
+        .then(results => {
+            res.render('pages/cart/cart', {
+                allStores: results[0],
+                selectedProducts: results[1].products
+            })
+        })
         .catch(err => next(new Error(err)))
 })
 
 
-// Cart (post)
-router.post('/cart/add-product/:productId', isLoggedIn, checkRoles('CLIENT'), (req, res, next) => {
-
-    const {amount} = req.body
+router.post('/add-product/:productId', isLoggedIn, checkRoles('CLIENT'), (req, res, next) => {
+    const {
+        amount
+    } = req.body
     const productId = req.params.productId
     const { _id } = req.session.currentUser
     

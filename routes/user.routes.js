@@ -13,44 +13,6 @@ const Product = require("./../models/product.model")
 const Store = require('./../models/store.model')
 const Cart = require('../models/cart.model')
 
-// Signup form
-
-router.get('/signup', (req, res) => res.render('pages/auth/signup-form'))
-
-router.post('/signup', (req, res, next) => {
-
-    const { name, surname, username, password } = req.body
-
-    User
-        .findOne({ username })
-        .then(user => {
-            if (user) {
-                res.render('pages/auth/signup-form', { errorMessage: 'This user already exist' })
-                return
-            }
-            const salt = bcrypt.genSaltSync(bcryptSalt)
-            const hashPass = bcrypt.hashSync(password, salt)
-            let cartObj
-
-            Cart
-                .create({ products: [] })
-                .then(cart => {
-                    User
-                        .create({ username, name, surname, password: hashPass, cart })
-                        .then(() => res.redirect('/'))
-                        .catch(err => {
-                            if (err instanceof mongoose.Error.ValidationError) {
-                                console.log(err.errors)
-                            } else {
-                                next()
-                            }
-                        })
-                })
-                .catch(err => console.log("Error!", err))
-        })
-        .catch(err => console.log('error', err))
-})
-
 
 // User profile
 router.get('/profile', isLoggedIn, checkRoles('CLIENT'), (req, res) => {
