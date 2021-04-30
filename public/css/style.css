@@ -4,13 +4,26 @@ body {
 }
 
 footer {
-    background-color:#0a2c42;
+    background-color:#334178;
     padding: 1em 0 0.1em 1em;
     color: #f7f9f9;
 }
 
 .navbar {
   margin-bottom: 50px;
+  background-color: #334178;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+}
+
+.navbar a {
+  color: white;
+  font-weight: bold;
+}
+
+.blackFont a {
+  color: black;
 }
 
 #stores-map {
@@ -66,7 +79,17 @@ footer {
 }
 
 #detailsLink {
-  color: darkblue;
+  color: #334178;
+}
+
+.merhackonaColor {
+  background-color: #334178;
+  color: white;
+}
+
+.merhackonaColor:hover {
+  background-color: #334178;
+  color: white;
 }
 
 /*# sourceMappingURL=style.css.map */

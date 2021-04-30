@@ -23,17 +23,17 @@
             <p>Precio: {{product.price}}€/ud</p>
             <p>Unidades: {{amount}}</p>
             <form action="/cart/delete/{{product.id}}" method="POST" class="deleteForm">
-                <button class="btn btn-dark">Eliminar</button>
+                <button class="btn merhackonaColor">Eliminar</button>
             </form>
         </div>
         {{/each}}
     </div>
     <br>
     <form action="/cart/purchase" method="POST">
-        <button type="submit" class="btn btn-dark">Confirmar compra</button>
+        <button type="submit" class="btn merhackonaColor">Confirmar compra</button>
     </form>
     <br>
-    <a href="/" class="btn btn-dark">Seguir comprando</a>
+    <a href="/" class="btn merhackonaColor">Seguir comprando</a>
 </div>
 <hr>
 <br>

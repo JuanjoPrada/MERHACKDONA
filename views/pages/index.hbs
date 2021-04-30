@@ -6,7 +6,7 @@
     <div>
         <form action="/" method="GET">
             <input id="filter" name="filter" type="text">
-            <button class="btn btn-md btn-dark find">Buscar</button>
+            <button class="btn btn-md merhackonaColor find">Buscar</button>
         </form>
     </div>
     <br>
@@ -35,7 +35,7 @@
             {{#when stock "gt" 0}}
             <form class="addProduct" action="/cart/add-product/{{id}}" method="POST">
                 <input type="number" name="amount">
-                <button class="btn btn-md btn-dark btn-sm addBtn">Añadir al carrito</button>
+                <button class="btn btn-md merhackonaColor btn-sm addBtn">Añadir al carrito</button>
             </form>
             {{/when}}
 
